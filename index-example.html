@@ -1,0 +1,2645 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выкуп авто в СПб - срочно и дорого за 2 часа | АвтоВыкуп СПб</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Срочный выкуп автомобилей в Санкт-Петербурге и Ленинградской области. Оценка до 98% рыночной стоимости. Выезд специалиста бесплатно. Деньги в день обращения.">
+    <meta name="keywords" content="выкуп авто СПб, срочный выкуп автомобилей, автовыкуп Санкт-Петербург, выкуп битых авто, скупка авто">
+    <link rel="canonical" href="https://avtovykup-spb.ru/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Выкуп авто в СПб - срочно и дорого за 2 часа">
+    <meta property="og:description" content="Профессиональный выкуп автомобилей в СПб. Быстро, дорого, надежно.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://avtovykup-spb.ru/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+    
+    <!-- External Libraries - ТОЛЬКО ЭТИ -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .shimmer-btn {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .shimmer-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .shimmer-btn:hover::before {
+            left: 100%;
+        }
+        
+        .animate-counter {
+            animation: countUp 2s ease-out;
+        }
+        
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 1rem;
+            z-index: 1000;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .cookie-banner.show {
+            transform: translateY(0);
+        }
+        
+        .sticky-buttons {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 999;
+        }
+        
+        .sticky-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(103, 126, 234, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(103, 126, 234, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(103, 126, 234, 0); }
+        }
+        
+        .quiz-step {
+            display: none;
+        }
+        
+        .quiz-step.active {
+            display: block;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: #e5e7eb;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .sticky-buttons {
+                right: 10px;
+                bottom: 10px;
+            }
+            
+            .sticky-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+
+        /* Custom styles for services section */
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb, #10b981);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .service-icon i {
+            font-size: 30px;
+            color: white;
+        }
+
+        /* Custom styles for fresh arrivals section */
+        .car-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .car-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .car-image {
+            position: relative;
+            height: 200px;
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .car-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+        }
+
+        .car-placeholder i {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .car-placeholder span {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .volkswagen {
+            color: #1e40af;
+        }
+
+        .nissan {
+            color: #dc2626;
+        }
+
+        .ford {
+            color: #059669;
+        }
+
+        .car-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #10b981;
+        }
+        
+ /* Header icon buttons */
+.header-icon-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.header-icon-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Mobile menu animation */
+#mobileNav {
+    transition: all 0.3s ease;
+    transform: translateY(-10px);
+    opacity: 0;
+}
+
+#mobileNav.show {
+    display: block !important;
+    transform: translateY(0);
+    opacity: 1;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Гамбургер иконка анимация */
+#mobileMenuBtn i {
+    transition: transform 0.3s ease;
+}
+
+#mobileMenuBtn.active i {
+    transform: rotate(90deg);
+}
+/* Footer Styles */
+footer {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+/* Footer Links Hover Effects */
+footer a {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+footer a:hover {
+    transform: translateX(3px);
+}
+
+footer a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #667eea;
+    transition: width 0.3s ease;
+}
+
+footer a:hover::after {
+    width: 100%;
+}
+
+/* Footer Social Icons */
+.footer-social-icons a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+    background: #667eea;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Newsletter Form */
+.newsletter-form {
+    position: relative;
+}
+
+.newsletter-form input {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+.newsletter-form button {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    transition: all 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background: linear-gradient(135deg, #5a67d8, #6b46c1);
+    transform: translateY(-1px);
+}
+
+/* Footer Sections Animation */
+footer .grid > div {
+    transition: transform 0.3s ease;
+}
+
+footer .grid > div:hover {
+    transform: translateY(-2px);
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Contact Info Icons */
+.contact-info i {
+    color: #667eea;
+    width: 20px;
+    text-align: center;
+}
+
+/* Footer Headings */
+footer h4, footer h5 {
+    color: #f9fafb;
+    position: relative;
+}
+
+footer h4::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 1px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    footer {
+        text-align: center;
+    }
+    
+    footer .grid {
+        gap: 2rem;
+    }
+    
+    .footer-social-icons {
+        justify-content: center;
+    }
+    
+    .newsletter-form {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    footer .flex.items-start {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* Smooth Animations */
+@keyframes footerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer .grid > div {
+    animation: footerFadeIn 0.6s ease forwards;
+}
+
+footer .grid > div:nth-child(1) { animation-delay: 0.1s; }
+footer .grid > div:nth-child(2) { animation-delay: 0.2s; }
+footer .grid > div:nth-child(3) { animation-delay: 0.3s; }
+footer .grid > div:nth-child(4) { animation-delay: 0.4s; }
+
+/* Highlight effect for calculator section */
+#calculator {
+    transition: all 0.5s ease;
+    scroll-margin-top: 80px; /* Отступ от верха при прокрутке */
+}
+
+.calculator-highlight {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+    border-radius: 15px;
+}
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Cookie Banner -->
+    <div id="cookieBanner" class="cookie-banner show">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-4 md:mb-0">
+                <p class="text-sm">🍪 Мы используем файлы cookies для улучшения работы сайта. Продолжая использовать сайт, вы соглашаетесь с нашей <a href="#" class="text-blue-400 underline">политикой конфиденциальности</a>.</p>
+            </div>
+            <div class="flex gap-2">
+                <button onclick="acceptCookies()" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-sm transition-colors">Принять</button>
+                <button onclick="declineCookies()" class="bg-gray-600 hover:bg-gray-700 px-4 py-2 rounded text-sm transition-colors">Отклонить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Contact Buttons -->
+    <div class="sticky-buttons">
+        <a href="tel:+79219876543" class="sticky-btn bg-green-500 hover:bg-green-600" title="Позвонить">
+            <i class="fas fa-phone"></i>
+        </a>
+        <a href="https://wa.me/79219876543" class="sticky-btn bg-green-600 hover:bg-green-700" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+<!-- Header -->
+<!-- Header -->
+<header class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between py-4">
+            <div class="flex items-center space-x-3">
+                <div class="text-3xl">🚗</div>
+                <div>
+                    <h1 class="text-xl font-bold gradient-text">АвтоМаршал</h1>
+                    <p class="text-sm text-gray-600">Срочный выкуп авто</p>
+                </div>
+            </div>
+            
+            <nav id="desktopNav" class="hidden md:flex space-x-6">
+                <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors">Услуги</a>
+                <a href="#calculator" class="text-gray-700 hover:text-blue-600 transition-colors">Калькулятор</a>
+                <a href="#reviews" class="text-gray-700 hover:text-blue-600 transition-colors">Отзывы</a>
+                <a href="#contacts" class="text-gray-700 hover:text-blue-600 transition-colors">Контакты</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <div class="hidden md:block text-right">
+                    <p class="text-lg font-bold text-blue-600">+7 (921) 987-65-43</p>
+                    <p class="text-xs text-gray-500">Работаем 24/7</p>
+                </div>
+                
+                <!-- Contact Icons -->
+                <div class="flex items-center space-x-3">
+                    <a href="tel:+79219876543" class="header-icon-btn bg-green-500 hover:bg-green-600" title="Позвонить">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                    <a href="https://wa.me/79219876543" class="header-icon-btn bg-green-600 hover:bg-green-700" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    
+                    <!-- ВАЖНО: Гамбургер-меню с правильным ID -->
+                    <button id="mobileMenuBtn" class="md:hidden header-icon-btn bg-gray-600 hover:bg-gray-700" title="Меню">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ВАЖНО: Мобильное меню с правильным ID -->
+        <nav id="mobileNav" class="md:hidden hidden bg-white border-t border-gray-200 py-4">
+            <div class="flex flex-col space-y-3">
+                <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors px-4 py-2">Услуги</a>
+                <a href="#calculator" class="text-gray-700 hover:text-blue-600 transition-colors px-4 py-2">Калькулятор</a>
+                <a href="#reviews" class="text-gray-700 hover:text-blue-600 transition-colors px-4 py-2">Отзывы</a>
+                <a href="#contacts" class="text-gray-700 hover:text-blue-600 transition-colors px-4 py-2">Контакты</a>
+                <div class="px-4 py-2 border-t border-gray-200">
+                    <p class="text-lg font-bold text-blue-600">+7 (921) 987-65-43</p>
+                    <p class="text-xs text-gray-500">Работаем 24/7</p>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 fade-in">
+                        Выкуп авто в СПб срочно и дорого за 2 часа
+                    </h1>
+                    <p class="text-xl mb-8 fade-in">
+                        🚀 Оценка до 98% рыночной стоимости<br>
+                        ⚡ Деньги в день обращения<br>
+                        🆓 Бесплатный выезд специалиста<br>
+                        📋 Работаем с любыми авто
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 fade-in">
+                        <button onclick="document.getElementById('calculator').scrollIntoView({behavior: 'smooth'})" class="shimmer-btn bg-white text-blue-600 px-8 py-3 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
+                            <i class="fas fa-calculator mr-2"></i>
+                            Кальякулятор стоимости авто
+                        </button>
+                        <a href="tel:+79219876543" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-600 transition-colors text-center">
+                            <i class="fas fa-phone mr-2"></i>
+                            Позвонить сейчас
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-white bg-opacity-20 backdrop-blur rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-4">Заявка на выкуп авто</h3>
+                        <form id="heroForm" class="space-y-4">
+                            <div>
+                                <select class="w-full px-4 py-2 rounded-lg text-gray-800" required>
+                                    <option value="">Выберите марку авто</option>
+                                    <option value="toyota">Toyota</option>
+                                    <option value="bmw">BMW</option>
+                                    <option value="mercedes">Mercedes-Benz</option>
+                                    <option value="audi">Audi</option>
+                                    <option value="volkswagen">Volkswagen</option>
+                                    <option value="kia">Kia</option>
+                                    <option value="hyundai">Hyundai</option>
+                                    <option value="lada">Lada</option>
+                                </select>
+                            </div>
+                            <div>
+                                <input type="number" placeholder="Год выпуска" min="1990" max="2024" class="w-full px-4 py-2 rounded-lg text-gray-800" required>
+                            </div>
+                            <div>
+                                <input type="tel" placeholder="Ваш телефон" class="w-full px-4 py-2 rounded-lg text-gray-800" required>
+                            </div>
+                            <label class="flex items-center text-sm">
+                                <input type="checkbox" class="mr-2" required>
+                                Согласен с <a href="#" class="underline">политикой конфиденциальности</a>
+                            </label>
+                            <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 rounded-lg transition-colors">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Получить оценку
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Наши услуги -->
+    <section class="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 flex items-center justify-center">
+                    <i class="fas fa-tools mr-3 text-blue-600"></i>
+                    Наши услуги
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Полный спектр автомобильных услуг для вашего удобства</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Выкуп автомобилей -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Выкуп автомобилей</h3>
+                    <p class="text-gray-600 mb-4">Лучшие предложения по выкупу автомобилей, любых:</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Целые с пробегом
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Проблемные
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Аварийные
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Кредитные
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Арестованные
+                        </li>
+                    </ul>
+                    <button class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105">
+                        Узнать стоимость
+                    </button>
+                </div>
+
+                <!-- Обмен авто на авто -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Обмен авто на авто (trade-in)</h3>
+                    <p class="text-gray-600 mb-6">Уникальная возможность обменять ваш автомобиль с доплатой, подобрав вам подходящий вариант.</p>
+                    <button class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105">
+                        Подобрать авто
+                    </button>
+                </div>
+
+                <!-- Прием авто на комиссию -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Прием авто на комиссию</h3>
+                    <p class="text-gray-600 mb-4">Честная и профессиональная экспертиза, реклама, переговоры с клиентами, подготовка документов, сопровождение сделки.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Прием на комиссию целых авто
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Прием битых авто
+                        </li>
+                    </ul>
+                    <button class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105">
+                        Оставить на комиссии
+                    </button>
+                </div>
+
+                <!-- Помощь в покупке -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Помощь в покупке автомобилей</h3>
+                    <p class="text-gray-600 mb-6">Профессиональная помощь в выборе автомобиля на любых торговых площадках с проверкой юридической чистоты.</p>
+                    <button class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105">
+                        Подобрать авто
+                    </button>
+                </div>
+
+                <!-- Наш каталог авто -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-list"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Наш каталог авто</h3>
+                    <p class="text-gray-600 mb-6">Каталог проверенных автомобилей в отличном состоянии, где вы можете найти подробную информацию о каждом авто.</p>
+                    <button class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105">
+                        Посмотреть каталог
+                    </button>
+                </div>
+
+                <!-- Авто-разборка -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Авто-разборка</h3>
+                    <p class="text-gray-600 mb-4">Прием автомобилей для разборки на запчасти в любом состоянии.</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Прием б/у запчастей
+                        </li>
+                    </ul>
+                    <button class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105">
+                        Сдать на разборку
+                    </button>
+                </div>
+
+                <!-- Предложения партнеров -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Предложения партнеров</h3>
+                    <p class="text-gray-600 mb-6">Сотрудничаем с лучшими организациями. Если у вас есть интересные идеи, мы всегда открыты к сотрудничеству.</p>
+                    <button class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105">
+                        Стать партнером
+                    </button>
+                </div>
+
+                <!-- Образцы договоров -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Образцы договоров</h3>
+                    <div class="mb-6">
+                        <div class="flex items-center text-blue-600 hover:text-blue-700 cursor-pointer">
+                            <i class="fas fa-download mr-2"></i>
+                            <span class="underline">Договор купли-продажи</span>
+                        </div>
+                    </div>
+                    <button class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105">
+                        Скачать образцы
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How we work -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Как происходит выкуп автомобиля - 4 простых шага</h2>
+                <p class="text-gray-600">Весь процесс от звонка до получения денег занимает не более 2 часов</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center fade-in">
+                    <div class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                        1
+                    </div>
+                    <div class="text-4xl mb-4">📞</div>
+                    <h3 class="text-xl font-bold mb-3">Предварительная оценка по телефону</h3>
+                    <p class="text-gray-600">Звоните нам, называете марку, модель, год и состояние авто. Получаете предварительную оценку за 5 минут.</p>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <div class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                        2
+                    </div>
+                    <div class="text-4xl mb-4">🚗</div>
+                    <h3 class="text-xl font-bold mb-3">Выезд специалиста и осмотр авто</h3>
+                    <p class="text-gray-600">Наш эксперт приезжает в удобное для вас место и время. Проводит детальный осмотр и диагностику автомобиля.</p>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <div class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                        3
+                    </div>
+                    <div class="text-4xl mb-4">📋</div>
+                    <h3 class="text-xl font-bold mb-3">Подписание договора купли-продажи</h3>
+                    <p class="text-gray-600">Если цена вас устраивает, подписываем договор. Все документы оформляет наш специалист.</p>
+                </div>
+                
+                <div class="text-center fade-in">
+                    <div class="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                        4
+                    </div>
+                    <div class="text-4xl mb-4">💰</div>
+                    <h3 class="text-xl font-bold mb-3">Получение денег любым способом</h3>
+                    <p class="text-gray-600">Получаете деньги наличными, переводом на карту или банковский счет. На ваш выбор.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Documents -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Документы для выкупа автомобиля</h2>
+                <p class="text-gray-600">Все, что нужно знать об оформлении сделки купли-продажи</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="text-2xl mr-2">📄</span>
+                        Необходимые документы
+                    </h3>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <i class="fas fa-id-card text-blue-600 mr-3"></i>
+                                <div>
+                                    <div class="font-medium">Паспорт владельца</div>
+                                    <div class="text-sm text-gray-600">Действующий паспорт РФ</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-file-alt text-blue-600 mr-3"></i>
+                                <div>
+                                    <div class="font-medium">ПТС</div>
+                                    <div class="text-sm text-gray-600">Паспорт транспортного средства</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-certificate text-blue-600 mr-3"></i>
+                                <div>
+                                    <div class="font-medium">СТС</div>
+                                    <div class="text-sm text-gray-600">Свидетельство о регистрации</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-key text-blue-600 mr-3"></i>
+                                <div>
+                                    <div class="font-medium">Ключи от авто</div>
+                                    <div class="text-sm text-gray-600">Все комплекты, включая запасные</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="text-2xl mr-2">✍️</span>
+                        Оформление сделки
+                    </h3>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="space-y-4">
+                            <div>
+                                <div class="font-medium mb-2">1. Осмотр и оценка</div>
+                                <p class="text-sm text-gray-600">Специалист проводит детальный осмотр автомобиля и определяет финальную стоимость</p>
+                            </div>
+                            <div>
+                                <div class="font-medium mb-2">2. Проверка документов</div>
+                                <p class="text-sm text-gray-600">Проверяем юридическую чистоту автомобиля, отсутствие обременений</p>
+                            </div>
+                            <div>
+                                <div class="font-medium mb-2">3. Подписание договора</div>
+                                <p class="text-sm text-gray-600">Заключаем договор купли-продажи в 3 экземплярах</p>
+                            </div>
+                            <div>
+                                <div class="font-medium mb-2">4. Получение денег</div>
+                                <p class="text-sm text-gray-600">Моментальная выплата удобным способом</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="text-2xl mr-2">🛡️</span>
+                        Юридическая безопасность
+                    </h3>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <i class="fas fa-shield-alt text-green-600 mr-3"></i>
+                                <span class="text-sm">Проверка на угон и розыск</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-shield-alt text-green-600 mr-3"></i>
+                                <span class="text-sm">Проверка обременений и залогов</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-shield-alt text-green-600 mr-3"></i>
+                                <span class="text-sm">Проверка истории регистраций</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-shield-alt text-green-600 mr-3"></i>
+                                <span class="text-sm">Проверка судебных ограничений</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-shield-alt text-green-600 mr-3"></i>
+                                <span class="text-sm">Юридическое сопровождение</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 p-3 bg-green-50 rounded">
+                            <p class="text-sm text-green-700"><i class="fas fa-check-circle mr-2"></i><strong>Гарантия:</strong> Все проверки - бесплатно. Полная юридическая защита сделки.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+   <!-- Свежие поступления -->
+    <section id="fresh-arrivals" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 flex items-center justify-center">
+                    <i class="fas fa-star mr-3 text-blue-600"></i>
+                    Свежие поступления в нашем каталоге
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Новые автомобили, поступившие в продажу</p>
+                <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-700 font-semibold">
+                    Посмотреть весь каталог →
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                <!-- Kia Cerato 2009 -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <div class="car-placeholder">
+                            <i class="fas fa-car"></i>
+                            <span>Kia Cerato</span>
+                        </div>
+                        <div class="car-badge">2009</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Kia Cerato 2 2009 г</h3>
+                        <div class="space-y-2 mb-4">
+                            <p class="flex items-center text-gray-600 text-sm">
+                                <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>
+                                Санкт-Петербург
+                            </p>
+                            <p class="flex items-center text-gray-600 text-sm">
+                                <i class="fas fa-road mr-2 text-blue-600"></i>
+                                155 000 км
+                            </p>
+                            <p class="flex items-center text-gray-600 text-sm">
+                                <i class="fas fa-calendar mr-2 text-blue-600"></i>
+                                2009
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="price">738 000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Volkswagen Caddy 2008 -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <div class="car-placeholder volkswagen">
+                            <i class="fas fa-van-shuttle"></i>
+                            <span>VW Caddy</span>
+                        </div>
+                        <div class="car-badge">2008</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Volkswagen Caddy 3 2008 г</h3>
+                        <div class="space-y-2 mb-4">
+                            <p class="flex items-center text-gray-600 text-sm">
+                                <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>
+                                Санкт-Петербург
+                            </p>
+                            <p class="flex items-center text-gray-600 text-sm">
+                                <i class="fas fa-road mr-2 text-blue-600"></i>
+                                133 000 км
+                            </p>
+                            <p class="flex items-center text-gray-600 text-sm">
+                                <i class="fas fa-calendar mr-2 text-blue-600"></i>
+                                2008
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="price">775 000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nissan Almera 2005 -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <div class="car-placeholder nissan">
+                            <i class="fas fa-car"></i>
+                            <span>Nissan Almera</span>
+                        </div>
+                        <div class="car-badge">2005</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Nissan Almera 2 2005 г</h3>
+                        <div class="space-y-2 mb-4">
+                            <p class="flex items-center text-gray-600 text-sm">
+                                <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>
+                                Санкт-Петербург
+                            </p>
+                            <p class="flex items-center text-gray-600 text-sm">
+                                <i class="fas fa-road mr-2 text-blue-600"></i>
+                                144 000 км
+                            </p>
+                            <p class="flex items-center text-gray-600 text-sm">
+                                <i class="fas fa-calendar mr-2 text-blue-600"></i>
+                                2005
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="price">319 000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ford Galaxy 1997 -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <div class="car-placeholder ford">
+                            <i class="fas fa-car-side"></i>
+                            <span>Ford Galaxy</span>
+                        </div>
+                        <div class="car-badge">1997</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Ford Galaxy 1 1997 г</h3>
+                        <div class="space-y-2 mb-4">
+                            <p class="flex items-center text-gray-600 text-sm">
+                                <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>
+                                Санкт-Петербург
+                            </p>
+                            <p class="flex items-center text-gray-600 text-sm">
+                                <i class="fas fa-road mr-2 text-blue-600"></i>
+                                196 000 км
+                            </p>
+                            <p class="flex items-center text-gray-600 text-sm">
+                                <i class="fas fa-calendar mr-2 text-blue-600"></i>
+                                1997
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="price">495 000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nissan Micra 2005 -->
+                <div class="car-card">
+                    <div class="car-image">
+                        <div class="car-placeholder nissan">
+                            <i class="fas fa-car"></i>
+                            <span>Nissan Micra</span>
+                        </div>
+                        <div class="car-badge">2005</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Nissan Micra 3 2005 г</h3>
+                        <div class="space-y-2 mb-4">
+                            <p class="flex items-center text-gray-600 text-sm">
+                                <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>
+                                Санкт-Петербург
+                            </p>
+                            <p class="flex items-center text-gray-600 text-sm">
+                                <i class="fas fa-road mr-2 text-blue-600"></i>
+                                115 000 км
+                            </p>
+                            <p class="flex items-center text-gray-600 text-sm">
+                                <i class="fas fa-calendar mr-2 text-blue-600"></i>
+                                2005
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="price">545 000 ₽</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-eye mr-2"></i>
+                    Посмотреть все автомобили в каталоге
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Часто задаваемые вопросы</h2>
+                <p class="text-gray-600">Ответы на популярные вопросы наших клиентов</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <div class="faq-item border rounded-lg">
+                        <button class="faq-question w-full text-left p-4 font-medium flex justify-between items-center hover:bg-gray-50" onclick="toggleFAQ(0)">
+                            <span>❓ Как быстро вы можете выкупить мой автомобиль?</span>
+                            <i class="fas fa-chevron-down transform transition-transform"></i>
+                        </button>
+                        <div class="faq-answer p-4 border-t bg-gray-50" style="display: block;">
+                            <p class="text-gray-700">Весь процесс от звонка до получения денег занимает от 30 минут до 2 часов. Сначала мы проводим предварительную оценку по телефону (5-10 минут), затем наш специалист выезжает к вам (30-60 минут на дорогу), осматривает автомобиль (15-30 минут) и если цена устраивает - сразу оформляем сделку и выплачиваем деньги.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border rounded-lg">
+                        <button class="faq-question w-full text-left p-4 font-medium flex justify-between items-center hover:bg-gray-50" onclick="toggleFAQ(1)">
+                            <span>💰 Какую цену вы предлагаете за автомобиль?</span>
+                            <i class="fas fa-chevron-down transform transition-transform"></i>
+                        </button>
+                        <div class="faq-answer p-4 border-t bg-gray-50" style="display: none;">
+                            <p class="text-gray-700">Наша цена составляет от 85% до 98% от рыночной стоимости автомобиля, в зависимости от его состояния, года выпуска, пробега и других факторов. Мы предлагаем одни из самых высоких цен на рынке автовыкупа в СПб. Точную стоимость можно узнать по телефону за 5 минут.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border rounded-lg">
+                        <button class="faq-question w-full text-left p-4 font-medium flex justify-between items-center hover:bg-gray-50" onclick="toggleFAQ(2)">
+                            <span>📋 Какие документы нужны для продажи?</span>
+                            <i class="fas fa-chevron-down transform transition-transform"></i>
+                        </button>
+                        <div class="faq-answer p-4 border-t bg-gray-50" style="display: none;">
+                            <p class="text-gray-700">Для продажи автомобиля необходимы: паспорт владельца, ПТС (паспорт транспортного средства), СТС (свидетельство о регистрации) и все комплекты ключей. Если автомобиль в кредите - поможем с оформлением у банка. Все остальные документы мы оформляем сами.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border rounded-lg">
+                        <button class="faq-question w-full text-left p-4 font-medium flex justify-between items-center hover:bg-gray-50" onclick="toggleFAQ(3)">
+                            <span>🚗 Выкупаете ли вы битые автомобили?</span>
+                            <i class="fas fa-chevron-down transform transition-transform"></i>
+                        </button>
+                        <div class="faq-answer p-4 border-t bg-gray-50" style="display: none;">
+                            <p class="text-gray-700">Да, мы выкупаем автомобили в любом состоянии: битые после ДТП, с техническими неисправностями, не на ходу. Стоимость рассчитывается индивидуально в зависимости от характера и степени повреждений. Предоставляем бесплатную эвакуацию.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border rounded-lg">
+                        <button class="faq-question w-full text-left p-4 font-medium flex justify-between items-center hover:bg-gray-50" onclick="toggleFAQ(4)">
+                            <span>💳 Как происходит выплата денег?</span>
+                            <i class="fas fa-chevron-down transform transition-transform"></i>
+                        </button>
+                        <div class="faq-answer p-4 border-t bg-gray-50" style="display: none;">
+                            <p class="text-gray-700">Деньги выплачиваем в день сделки любым удобным способом: наличными на месте, переводом на банковскую карту или на расчетный счет. Комиссии не берем. Максимальная сумма наличными - 600 000 рублей, свыше - только безналичный расчет.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border rounded-lg">
+                        <button class="faq-question w-full text-left p-4 font-medium flex justify-between items-center hover:bg-gray-50" onclick="toggleFAQ(5)">
+                            <span>🏢 Можете ли выкупить авто у юридического лица?</span>
+                            <i class="fas fa-chevron-down transform transition-transform"></i>
+                        </button>
+                        <div class="faq-answer p-4 border-t bg-gray-50" style="display: none;">
+                            <p class="text-gray-700">Да, мы работаем как с физическими, так и с юридическими лицами. Выкупаем корпоративные автопарки, автомобили ИП, ООО. Все документы оформляем в соответствии с требованиями законодательства, предоставляем полный пакет отчетности.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border rounded-lg">
+                        <button class="faq-question w-full text-left p-4 font-medium flex justify-between items-center hover:bg-gray-50" onclick="toggleFAQ(6)">
+                            <span>📍 В каких районах СПб вы работаете?</span>
+                            <i class="fas fa-chevron-down transform transition-transform"></i>
+                        </button>
+                        <div class="faq-answer p-4 border-t bg-gray-50" style="display: none;">
+                            <p class="text-gray-700">Мы работаем по всей территории Санкт-Петербурга и Ленинградской области. Выезжаем во все районы города: Центральный, Невский, Приморский, Красногвардейский, Фрунзенский и другие. Также выкупаем авто в пригородах: Пушкин, Гатчина, Колпино, Кронштадт.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border rounded-lg">
+                        <button class="faq-question w-full text-left p-4 font-medium flex justify-between items-center hover:bg-gray-50" onclick="toggleFAQ(7)">
+                            <span>🛡️ Какие гарантии вы предоставляете?</span>
+                            <i class="fas fa-chevron-down transform transition-transform"></i>
+                        </button>
+                        <div class="faq-answer p-4 border-t bg-gray-50" style="display: none;">
+                            <p class="text-gray-700">Мы гарантируем: честную оценку без занижения цены, полную юридическую чистоту сделки, конфиденциальность, возможность отказаться от сделки на любом этапе до подписания договора. Работаем официально, все документы в полном соответствии с законом.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="fade-in">
+                    <div class="text-4xl mb-2">📅</div>
+                    <div class="text-3xl font-bold text-blue-600 animate-counter" data-count="12">0</div>
+                    <p class="text-gray-600">лет опыта</p>
+                </div>
+                <div class="fade-in">
+                    <div class="text-4xl mb-2">🚗</div>
+                    <div class="text-3xl font-bold text-blue-600 animate-counter" data-count="5000">0</div>
+                    <p class="text-gray-600">выкупленных авто</p>
+                </div>
+                <div class="fade-in">
+                    <div class="text-4xl mb-2">😊</div>
+                    <div class="text-3xl font-bold text-blue-600 animate-counter" data-count="98">0</div>
+                    <p class="text-gray-600">% довольных клиентов</p>
+                </div>
+                <div class="fade-in">
+                    <div class="text-4xl mb-2">⚡</div>
+                    <div class="text-3xl font-bold text-blue-600 animate-counter" data-count="2">0</div>
+                    <p class="text-gray-600">часа на сделку</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section id="services" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Преимущества нашего автовыкупа</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Мы предлагаем максимально выгодные условия выкупа автомобилей в Санкт-Петербурге с гарантией честной сделки.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow fade-in">
+                    <div class="text-4xl mb-4 text-center">⚡</div>
+                    <h3 class="text-xl font-bold mb-3 text-center">Срочный выкуп за 2 часа</h3>
+                    <p class="text-gray-600 text-center">Весь процесс от оценки до получения денег занимает не более 2 часов. Быстрая оценка по телефону, выезд специалиста и моментальная выплата.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow fade-in">
+                    <div class="text-4xl mb-4 text-center">💰</div>
+                    <h3 class="text-xl font-bold mb-3 text-center">Оценка до 98% рыночной стоимости</h3>
+                    <p class="text-gray-600 text-center">Справедливая цена за ваш автомобиль. Мы предлагаем одни из самых высоких цен на рынке автовыкупа в СПб.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow fade-in">
+                    <div class="text-4xl mb-4 text-center">🆓</div>
+                    <h3 class="text-xl font-bold mb-3 text-center">Бесплатный выезд и оформление</h3>
+                    <p class="text-gray-600 text-center">Выезд специалиста, оценка, оформление документов - все абсолютно бесплатно. Никаких скрытых платежей.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow fade-in">
+                    <div class="text-4xl mb-4 text-center">🚗</div>
+                    <h3 class="text-xl font-bold mb-3 text-center">Работаем с любыми авто</h3>
+                    <p class="text-gray-600 text-center">Выкупаем автомобили любых марок, моделей и в любом состоянии: исправные, битые, кредитные, не на ходу.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Calculator -->
+    <section id="calculator" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Калькулятор стоимости автомобиля</h2>
+                <p class="text-gray-600">Узнайте примерную стоимость вашего автомобиля прямо сейчас</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-50 p-8 rounded-lg">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold mb-4">🔧 Параметры автомобиля</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Марка автомобиля</label>
+                                    <select id="calcBrand" class="w-full px-4 py-2 border rounded-lg">
+                                        <option value="">Выберите марку</option>
+                                        <option value="toyota" data-coeff="1.0">Toyota</option>
+                                        <option value="bmw" data-coeff="1.2">BMW</option>
+                                        <option value="mercedes" data-coeff="1.3">Mercedes-Benz</option>
+                                        <option value="audi" data-coeff="1.2">Audi</option>
+                                        <option value="volkswagen" data-coeff="0.9">Volkswagen</option>
+                                        <option value="kia" data-coeff="0.8">Kia</option>
+                                        <option value="hyundai" data-coeff="0.8">Hyundai</option>
+                                        <option value="lada" data-coeff="0.4">Lada</option>
+                                        <option value="ford" data-coeff="0.7">Ford</option>
+                                        <option value="nissan" data-coeff="0.8">Nissan</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Год выпуска</label>
+                                    <input type="number" id="calcYear" min="1990" max="2024" placeholder="2020" class="w-full px-4 py-2 border rounded-lg">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Пробег (км)</label>
+                                    <input type="number" id="calcMileage" min="0" max="500000" placeholder="50000" class="w-full px-4 py-2 border rounded-lg">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Состояние</label>
+                                    <select id="calcCondition" class="w-full px-4 py-2 border rounded-lg">
+                                        <option value="excellent" data-coeff="1.0">Отличное (без повреждений)</option>
+                                        <option value="good" data-coeff="0.85">Хорошее (мелкие дефекты)</option>
+                                        <option value="fair" data-coeff="0.7">Требует ремонта</option>
+                                        <option value="poor" data-coeff="0.5">Битое/не на ходу</option>
+                                    </select>
+                                </div>
+                                
+                                <button onclick="calculateCost()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition-colors">
+                                    <i class="fas fa-calculator mr-2"></i>
+                                    Рассчитать стоимость
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold mb-4">💡 Результат оценки</h3>
+                            <div id="calcResult" class="bg-white p-6 rounded-lg border-2 border-dashed border-gray-300 text-center">
+                                <div class="text-6xl mb-4">🔍</div>
+                                <p class="text-gray-500">Заполните параметры автомобиля для получения оценки</p>
+                            </div>
+                            
+                            <div class="mt-6">
+                                <h4 class="font-bold mb-3">📊 Факторы, влияющие на стоимость:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Марка и модель автомобиля</li>
+                                    <li>• Год выпуска и пробег</li>
+                                    <li>• Техническое состояние</li>
+                                    <li>• Наличие документов</li>
+                                    <li>• Комплектация и опции</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold mb-4">🎯 Узнайте стоимость вашего авто за 3 вопроса</h2>
+                    <p class="text-blue-100">Пройдите быструю оценку и получите персональное предложение</p>
+                </div>
+                
+                <div class="bg-white text-gray-800 rounded-lg p-8">
+                    <div class="progress-bar mb-6">
+                        <div id="quizProgress" class="progress-fill"></div>
+                    </div>
+                    
+                    <div id="quiz">
+                        <!-- Question 1 -->
+                        <div class="quiz-step active" data-step="1">
+                            <h3 class="text-xl font-bold mb-6 text-center">Какой у вас автомобиль?</h3>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                <button class="quiz-option p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors" data-value="japanese">
+                                    <div class="text-2xl mb-2">🇯🇵</div>
+                                    <div class="font-medium">Японские</div>
+                                    <div class="text-sm text-gray-500">Toyota, Honda, Nissan</div>
+                                </button>
+                                <button class="quiz-option p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors" data-value="german">
+                                    <div class="text-2xl mb-2">🇩🇪</div>
+                                    <div class="font-medium">Немецкие</div>
+                                    <div class="text-sm text-gray-500">BMW, Mercedes, Audi</div>
+                                </button>
+                                <button class="quiz-option p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors" data-value="korean">
+                                    <div class="text-2xl mb-2">🇰🇷</div>
+                                    <div class="font-medium">Корейские</div>
+                                    <div class="text-sm text-gray-500">Kia, Hyundai</div>
+                                </button>
+                                <button class="quiz-option p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors" data-value="american">
+                                    <div class="text-2xl mb-2">🇺🇸</div>
+                                    <div class="font-medium">Американские</div>
+                                    <div class="text-sm text-gray-500">Ford, Chevrolet</div>
+                                </button>
+                                <button class="quiz-option p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors" data-value="russian">
+                                    <div class="text-2xl mb-2">🇷🇺</div>
+                                    <div class="font-medium">Отечественные</div>
+                                    <div class="text-sm text-gray-500">Lada, УАЗ, ГАЗ</div>
+                                </button>
+                                <button class="quiz-option p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors" data-value="other">
+                                    <div class="text-2xl mb-2">🌍</div>
+                                    <div class="font-medium">Другие</div>
+                                    <div class="text-sm text-gray-500">Уточню позже</div>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 2 -->
+                        <div class="quiz-step" data-step="2">
+                            <h3 class="text-xl font-bold mb-6 text-center">В каком состоянии автомобиль?</h3>
+                            <div class="space-y-4">
+                                <button class="quiz-option w-full p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors text-left" data-value="excellent">
+                                    <div class="flex items-center">
+                                        <div class="text-2xl mr-4">✨</div>
+                                        <div>
+                                            <div class="font-medium">Отличное состояние</div>
+                                            <div class="text-sm text-gray-500">Без повреждений, все работает исправно</div>
+                                        </div>
+                                    </div>
+                                </button>
+                                <button class="quiz-option w-full p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors text-left" data-value="good">
+                                    <div class="flex items-center">
+                                        <div class="text-2xl mr-4">👍</div>
+                                        <div>
+                                            <div class="font-medium">Хорошее состояние</div>
+                                            <div class="text-sm text-gray-500">Мелкие царапины, небольшой износ</div>
+                                        </div>
+                                    </div>
+                                </button>
+                                <button class="quiz-option w-full p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors text-left" data-value="repair">
+                                    <div class="flex items-center">
+                                        <div class="text-2xl mr-4">🔧</div>
+                                        <div>
+                                            <div class="font-medium">Требует ремонта</div>
+                                            <div class="text-sm text-gray-500">Есть неисправности, нужен ремонт</div>
+                                        </div>
+                                    </div>
+                                </button>
+                                <button class="quiz-option w-full p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors text-left" data-value="damaged">
+                                    <div class="flex items-center">
+                                        <div class="text-2xl mr-4">💥</div>
+                                        <div>
+                                            <div class="font-medium">После ДТП или не на ходу</div>
+                                            <div class="text-sm text-gray-500">Серьезные повреждения, не заводится</div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Question 3 -->
+                        <div class="quiz-step" data-step="3">
+                            <h3 class="text-xl font-bold mb-6 text-center">Когда планируете продать?</h3>
+                            <div class="space-y-4">
+                                <button class="quiz-option w-full p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors text-left" data-value="urgent">
+                                    <div class="flex items-center">
+                                        <div class="text-2xl mr-4">🚨</div>
+                                        <div>
+                                            <div class="font-medium">Срочно, сегодня-завтра</div>
+                                            <div class="text-sm text-gray-500">Нужны деньги как можно быстрее</div>
+                                        </div>
+                                    </div>
+                                </button>
+                                <button class="quiz-option w-full p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors text-left" data-value="week">
+                                    <div class="flex items-center">
+                                        <div class="text-2xl mr-4">📅</div>
+                                        <div>
+                                            <div class="font-medium">В течение недели</div>
+                                            <div class="text-sm text-gray-500">Есть немного времени на поиск покупателя</div>
+                                        </div>
+                                    </div>
+                                </button>
+                                <button class="quiz-option w-full p-4 border-2 border-gray-200 rounded-lg hover:border-blue-500 transition-colors text-left" data-value="considering">
+                                    <div class="flex items-center">
+                                        <div class="text-2xl mr-4">🤔</div>
+                                        <div>
+                                            <div class="font-medium">Рассматриваю варианты</div>
+                                            <div class="text-sm text-gray-500">Изучаю рынок, сравниваю предложения</div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Result -->
+                        <div class="quiz-step" data-step="result">
+                            <div class="text-center">
+                                <div class="text-6xl mb-4">🎉</div>
+                                <h3 class="text-2xl font-bold mb-4">Отлично! Мы подготовили для вас предложение</h3>
+                                <div id="quizRecommendation" class="bg-blue-50 p-6 rounded-lg mb-6">
+                                    <!-- Рекомендация будет вставлена через JS -->
+                                </div>
+                                
+                                <form id="quizForm" class="max-w-md mx-auto space-y-4">
+                                    <input type="text" placeholder="Ваше имя" class="w-full px-4 py-2 border rounded-lg" required>
+                                    <input type="tel" placeholder="Телефон" class="w-full px-4 py-2 border rounded-lg" required>
+                                    <label class="flex items-center text-sm">
+                                        <input type="checkbox" class="mr-2" required>
+                                        Согласен с обработкой персональных данных
+                                    </label>
+                                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition-colors">
+                                        Получить персональное предложение
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- What cars we buy -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Какие автомобили мы выкупаем</h2>
+                <p class="text-gray-600">Покупаем любые автомобили независимо от марки, модели, года выпуска и состояния</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="text-2xl mr-2">🏷️</span>
+                        Выкуп авто по маркам
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium">🇯🇵 Японские автомобили</h4>
+                            <p class="text-sm text-gray-600">Toyota, Honda, Nissan, Mazda, Mitsubishi, Subaru</p>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium">🇩🇪 Немецкие автомобили</h4>
+                            <p class="text-sm text-gray-600">BMW, Mercedes-Benz, Audi, Volkswagen, Opel</p>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium">🇰🇷 Корейские автомобили</h4>
+                            <p class="text-sm text-gray-600">Kia, Hyundai, SsangYong, Daewoo</p>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium">🇷🇺 Отечественные автомобили</h4>
+                            <p class="text-sm text-gray-600">Lada, УАЗ, ГАЗ, Москвич</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="text-2xl mr-2">🔧</span>
+                        Выкуп авто в любом состоянии
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium">💥 Битые авто после ДТП</h4>
+                            <p class="text-sm text-gray-600">Любые повреждения: от царапин до серьезных деформаций</p>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium">💳 Кредитные и залоговые авто</h4>
+                            <p class="text-sm text-gray-600">Поможем с погашением кредита и оформлением</p>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium">⚠️ Неисправные автомобили</h4>
+                            <p class="text-sm text-gray-600">Проблемы с двигателем, коробкой, электрикой</p>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium">🚫 Авто не на ходу</h4>
+                            <p class="text-sm text-gray-600">Не заводится, требует эвакуации</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="text-2xl mr-2">🚙</span>
+                        Выкуп по типам кузова
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium">🚗 Легковые автомобили</h4>
+                            <p class="text-sm text-gray-600">Седаны, хэтчбеки, универсалы, купе</p>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium">🚙 Внедорожники и кроссоверы</h4>
+                            <p class="text-sm text-gray-600">Полноприводные и переднеприводные SUV</p>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium">🚐 Микроавтобусы</h4>
+                            <p class="text-sm text-gray-600">Пассажирские и грузовые микроавтобусы</p>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded-lg">
+                            <h4 class="font-medium">🚚 Коммерческие авто</h4>
+                            <p class="text-sm text-gray-600">Легкие коммерческие автомобили</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Special Offer -->
+<section class="py-16 bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+    <div class="container mx-auto px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-6xl mb-4">🚕</div>
+            <h2 class="text-3xl font-bold mb-4">Специальное предложение этого месяца!</h2>
+            <p class="text-xl mb-6">Приезжайте сами к нам в офис - мы компенсируем вам поездку <strong>бесплатным такси обратно!</strong></p>
+            
+            <div class="bg-white bg-opacity-20 backdrop-blur rounded-lg p-6 mb-6">
+                <div class="grid md:grid-cols-2 gap-6 text-left">
+                    <div>
+                        <h3 class="text-xl font-bold mb-3 flex items-center">
+                            <i class="fas fa-taxi text-yellow-300 mr-2"></i>
+                            Как это работает:
+                        </h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-300 mr-2"></i>
+                                Приезжаете к нам сами в офис
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-300 mr-2"></i>
+                                Проводим оценку и оформляем сделку
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-300 mr-2"></i>
+                                Заказываем вам Яндекс.Такси домой
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-300 mr-2"></i>
+                                Компания оплачивает поездку!
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold mb-3 flex items-center">
+                            <i class="fas fa-map-marked-alt text-blue-300 mr-2"></i>
+                            Условия акции:
+                        </h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-yellow-300 mr-2"></i>
+                                Радиус до 20 км от СПб
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-yellow-300 mr-2"></i>
+                                Сумма сделки от 200 000 ₽
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-yellow-300 mr-2"></i>
+                                Действует до конца месяца
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-yellow-300 mr-2"></i>
+                                Только при личном визите
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-6 pt-4 border-t border-white border-opacity-30">
+                    <div class="text-lg font-bold mb-2">⏰ До окончания акции осталось:</div>
+                    <div id="countdown" class="text-2xl font-bold">
+                        <span id="days">0</span>д <span id="hours">0</span>ч <span id="minutes">0</span>м <span id="seconds">0</span>с
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="openQuickForm()" class="shimmer-btn bg-white text-blue-600 px-8 py-3 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-taxi mr-2"></i>
+                    Записаться на приезд
+                </button>
+                <a href="tel:+79219876543" class="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-3 rounded-lg font-bold text-lg transition-colors inline-block">
+                    <i class="fas fa-phone mr-2"></i>
+                    Узнать подробности
+                </a>
+            </div>
+            
+            <p class="text-sm mt-4 opacity-80">
+                * Бесплатное такси предоставляется через сервис Яндекс.Такси в пределах 20 км от офиса
+            </p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Pricing -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Цены на выкуп автомобилей в СПб</h2>
+                <p class="text-gray-600">Мы предлагаем одни из самых высоких цен на рынке автовыкупа</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="text-2xl mr-2">📊</span>
+                        Принципы ценообразования
+                    </h3>
+                    <div class="bg-white p-6 rounded-lg">
+                        <p class="mb-4">При оценке автомобиля мы учитываем множество факторов для определения максимально справедливой цены:</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Текущая рыночная стоимость</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Техническое состояние</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Комплектация и опции</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> История обслуживания</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Юридическая чистота</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="text-2xl mr-2">⚖️</span>
+                        Сравнение с конкурентами
+                    </h3>
+                    <div class="bg-white p-6 rounded-lg">
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center p-3 bg-green-50 rounded">
+                                <span class="font-medium">АвтоМаршал</span>
+                                <span class="text-green-600 font-bold">85-98%</span>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                                <span>Конкуренты</span>
+                                <span class="text-gray-600">60-80%</span>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-gray-50 rounded">
+                                <span>Trade-in</span>
+                                <span class="text-gray-600">50-70%</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-4">* от рыночной стоимости автомобиля</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="text-2xl mr-2">💡</span>
+                        Дополнительные услуги
+                    </h3>
+                    <div class="bg-white p-6 rounded-lg">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span>Выезд специалиста</span>
+                                <span class="text-green-600 font-bold">Бесплатно</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span>Оценка автомобиля</span>
+                                <span class="text-green-600 font-bold">Бесплатно</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span>Оформление документов</span>
+                                <span class="text-green-600 font-bold">Бесплатно</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span>Эвакуация авто</span>
+                                <span class="text-green-600 font-bold">Бесплатно</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span>Снятие с учета</span>
+                                <span class="text-blue-600">Помогаем</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+ 
+    <!-- Reviews -->
+    <section id="reviews" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Отзывы клиентов о выкупе авто</h2>
+                <p class="text-gray-600">Более 5000 довольных клиентов уже продали нам свои автомобили</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">А</div>
+                        <div class="ml-3">
+                            <h4 class="font-bold">Александр Петров</h4>
+                            <p class="text-sm text-gray-500">15 января 2024</p>
+                        </div>
+                        <div class="ml-auto flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">Продавал BMW X5 2018 года. Ребята приехали точно в назначенное время, быстро оценили машину и предложили хорошую цену. Деньги получил сразу на карту. Рекомендую!</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-pink-600 text-white rounded-full flex items-center justify-center font-bold text-lg">М</div>
+                        <div class="ml-3">
+                            <h4 class="font-bold">Мария Иванова</h4>
+                            <p class="text-sm text-gray-500">8 января 2024</p>
+                        </div>
+                        <div class="ml-auto flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">У меня была Toyota Camry после небольшого ДТП. Думала, что за битую машину дадут копейки, но оценили справедливо - 85% от рыночной стоимости. Очень довольна сервисом!</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-lg">С</div>
+                        <div class="ml-3">
+                            <h4 class="font-bold">Сергей Козлов</h4>
+                            <p class="text-sm text-gray-500">22 декабря 2023</p>
+                        </div>
+                        <div class="ml-auto flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">Нужно было срочно продать авто из-за переезда. Позвонил утром, к обеду приехал специалист, к вечеру уже были деньги на счету. Быстро и без лишних вопросов.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">Е</div>
+                        <div class="ml-3">
+                            <h4 class="font-bold">Елена Смирнова</h4>
+                            <p class="text-sm text-gray-500">5 декабря 2023</p>
+                        </div>
+                        <div class="ml-auto flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">Машина была в кредите, думала будут проблемы с оформлением. Но ребята взяли все на себя - и с банком связались, и документы оформили. Профессионалы своего дела!</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold text-lg">Д</div>
+                        <div class="ml-3">
+                            <h4 class="font-bold">Дмитрий Волков</h4>
+                            <p class="text-sm text-gray-500">18 ноября 2023</p>
+                        </div>
+                        <div class="ml-auto flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">Продавал старую Ладу Гранту 2016 года. Не ожидал, что за отечественное авто дадут приличные деньги, но получил больше, чем рассчитывал. Спасибо за честную работу!</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg">И</div>
+                        <div class="ml-3">
+                            <h4 class="font-bold">Игорь Федоров</h4>
+                            <p class="text-sm text-gray-500">3 ноября 2023</p>
+                        </div>
+                        <div class="ml-auto flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">Hyundai Solaris не заводился после зимы. Думал, что никто не купит неисправную машину. Оказалось - зря переживал. Оценили адекватно, приехали с эвакуатором и забрали сами.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Director -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="grid md:grid-cols-3 gap-8 items-center">
+                        <div class="text-center">
+                            <div class="w-32 h-32 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white text-4xl font-bold mx-auto mb-4">
+                                АП
+                            </div>
+                            <h3 class="text-xl font-bold">Александр Петров</h3>
+                            <p class="text-gray-600">Директор компании</p>
+                            <p class="text-sm text-gray-500">12 лет в автобизнесе</p>
+                        </div>
+                        
+                        <div class="md:col-span-2">
+                            <h3 class="text-2xl font-bold mb-4">Слово директора</h3>
+                            <p class="text-gray-700 mb-4">
+                                Добро пожаловать в АвтоВыкуп СПб! За 12 лет работы в автомобильной сфере я понял одну простую истину: честность и профессионализм - основа успешного бизнеса.
+                            </p>
+                            <p class="text-gray-700 mb-4">
+                                Мы выкупили более 5000 автомобилей и каждая сделка для нас - это не просто бизнес, а ответственность перед клиентом. Я лично гарантирую честную оценку, прозрачные условия и моментальную выплату.
+                            </p>
+                            <p class="text-gray-700 mb-6">
+                                Наша миссия - сделать продажу автомобиля максимально простой, быстрой и выгодной для каждого клиента. Мы работаем не ради сиюминутной прибыли, а строим долгосрочные отношения, основанные на доверии.
+                            </p>
+                            <div class="flex items-center">
+                                <i class="fas fa-quote-left text-blue-600 text-2xl mr-3"></i>
+                                <p class="text-blue-600 font-medium italic">"Ваше доверие - наша репутация"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Useful Tips -->
+    <section class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Полезные советы</h2>
+                <p class="text-gray-600">Как подготовить автомобиль к продаже и получить максимальную цену</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+                    <div class="text-3xl mb-3 text-center">🧽</div>
+                    <h3 class="font-bold mb-3">Внешний вид</h3>
+                    <p class="text-sm text-gray-600">Помойте автомобиль снаружи и внутри. Чистый автомобиль выглядит более ухоженным и может добавить к стоимости 3-5%.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+                    <div class="text-3xl mb-3 text-center">📋</div>
+                    <h3 class="font-bold mb-3">Документы</h3>
+                    <p class="text-sm text-gray-600">Соберите всю документацию: ПТС, СТС, сервисную книжку, чеки на ремонт. Это повышает доверие и стоимость.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+                    <div class="text-3xl mb-3 text-center">🔧</div>
+                    <h3 class="font-bold mb-3">Мелкий ремонт</h3>
+                    <p class="text-sm text-gray-600">Устраните мелкие неисправности: замените лампочки, долейте жидкости. Это создает впечатление ухоженного авто.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-shadow">
+                    <div class="text-3xl mb-3 text-center">⏰</div>
+                    <h3 class="font-bold mb-3">Время продажи</h3>
+                    <p class="text-sm text-gray-600">Лучшее время для продажи - весна и начало лета. Зимой спрос ниже, но мы покупаем круглый год по хорошим ценам.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Geography -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">География работы - выкуп авто в СПб и области</h2>
+                <p class="text-gray-600">Бесплатный выезд специалиста по всему Санкт-Петербургу и Ленинградской области</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="text-2xl mr-2">🏙️</span>
+                        Районы Санкт-Петербурга
+                    </h3>
+                    <div class="bg-white p-6 rounded-lg">
+                        <div class="grid grid-cols-2 gap-2 text-sm">
+                            <div class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Центральный</div>
+                            <div class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Невский</div>
+                            <div class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Приморский</div>
+                            <div class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Василеостровский</div>
+                            <div class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Красногвардейский</div>
+                            <div class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Фрунзенский</div>
+                            <div class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Московский</div>
+                            <div class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Калининский</div>
+                            <div class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Выборгский</div>
+                            <div class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Петроградский</div>
+                            <div class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Кировский</div>
+                            <div class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Адмиралтейский</div>
+                            <div class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Петродворцовый</div>
+                            <div class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Пушкинский</div>
+                            <div class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Кронштадтский</div>
+                            <div class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Колпинский</div>
+                            <div class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Красносельский</div>
+                            <div class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>Курортный</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="text-2xl mr-2">🌲</span>
+                        Города Ленинградской области
+                    </h3>
+                    <div class="bg-white p-6 rounded-lg">
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="flex items-center"><i class="fas fa-map-marker-alt text-green-600 mr-2"></i>Гатчина</span>
+                                <span class="text-sm text-gray-500">25 км</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="flex items-center"><i class="fas fa-map-marker-alt text-green-600 mr-2"></i>Всеволожск</span>
+                                <span class="text-sm text-gray-500">30 км</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="flex items-center"><i class="fas fa-map-marker-alt text-green-600 mr-2"></i>Тосно</span>
+                                <span class="text-sm text-gray-500">45 км</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="flex items-center"><i class="fas fa-map-marker-alt text-green-600 mr-2"></i>Кингисепп</span>
+                                <span class="text-sm text-gray-500">130 км</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="flex items-center"><i class="fas fa-map-marker-alt text-green-600 mr-2"></i>Выборг</span>
+                                <span class="text-sm text-gray-500">140 км</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="flex items-center"><i class="fas fa-map-marker-alt text-green-600 mr-2"></i>Луга</span>
+                                <span class="text-sm text-gray-500">120 км</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="flex items-center"><i class="fas fa-map-marker-alt text-green-600 mr-2"></i>Волхов</span>
+                                <span class="text-sm text-gray-500">120 км</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="flex items-center"><i class="fas fa-map-marker-alt text-green-600 mr-2"></i>Приозерск</span>
+                                <span class="text-sm text-gray-500">150 км</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 p-3 bg-blue-50 rounded">
+                            <p class="text-sm text-blue-700">🚗 <strong>Бесплатный выезд</strong> в радиусе 50 км от СПб<br>
+                            🚛 <strong>За пределами 50 км</strong> - по договоренности</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contacts -->
+    <section id="contacts" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Контакты</h2>
+                <p class="text-gray-600">Свяжитесь с нами любым удобным способом для оценки и выкупа вашего автомобиля</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <span class="text-2xl mr-2">📞</span>
+                        Связаться с нами
+                    </h3>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold">Телефон</div>
+                                <a href="tel:+79219876543" class="text-blue-600 hover:underline">+7 (921) 987-65-43</a>
+                                <div class="text-sm text-gray-500">Работаем 24/7, звонки бесплатно</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center mr-4">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold">WhatsApp</div>
+                                <a href="https://wa.me/79219876543" class="text-green-600 hover:underline">+7 (921) 987-65-43</a>
+                                <div class="text-sm text-gray-500">Быстрые ответы в мессенджере</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gray-600 text-white rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold">Email</div>
+                                <a href="mailto:info@avtovykup-spb.ru" class="text-blue-600 hover:underline">info@avtovykup-spb.ru</a>
+                                <div class="text-sm text-gray-500">Ответим в течение часа</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold">Адрес офиса</div>
+                                <div class="text-gray-700">г. Санкт-Петербург, Невский пр., д. 100</div>
+                                <div class="text-sm text-gray-500">м. Маяковская, 2 минуты пешком</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="font-bold mb-4">📝 Форма обратного звонка</h4>
+                    <form id="contactForm" class="space-y-4">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Ваше имя" class="px-4 py-2 border rounded-lg" required>
+                            <input type="tel" placeholder="Телефон" class="px-4 py-2 border rounded-lg" required>
+                        </div>
+                        <textarea placeholder="Марка, модель, год автомобиля..." rows="3" class="w-full px-4 py-2 border rounded-lg"></textarea>
+                        <label class="flex items-center text-sm">
+                            <input type="checkbox" class="mr-2" required>
+                            Согласен с <a href="#" class="text-blue-600 underline">политикой конфиденциальности</a>
+                        </label>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition-colors">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Заказать обратный звонок
+                        </button>
+                    </form>
+                </div>
+                
+<div>
+    <h3 class="text-xl font-bold mb-6 flex items-center">
+        <span class="text-2xl mr-2">🗺️</span>
+        Мы находимся здесь
+    </h3>
+    
+    <div class="bg-gray-200 rounded-lg overflow-hidden mb-6" style="height: 400px;">
+        <iframe 
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A7f7c72dfe2b2b85e8123c8bcaab847d13de02da4f2c9bb89cf84dd66b9e62a4b&amp;source=constructor" 
+            width="100%" 
+            height="400" 
+            frameborder="0"
+            title="Карта расположения АвтоВыкуп СПб">
+        </iframe>
+    </div>
+</div>
+</div>
+</div>
+<br>
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+            <div>
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="text-2xl">🚗</div>
+                    <div>
+                        <h3 class="text-lg font-bold">АвтоВыкуп СПб</h3>
+                        <p class="text-sm text-gray-400">Срочный выкуп авто</p>
+                    </div>
+                </div>
+                <p class="text-gray-400 text-sm mb-4">Профессиональный выкуп автомобилей в Санкт-Петербурге с 2012 года. Честно, быстро, выгодно.</p>
+                <div class="flex space-x-3 footer-social-icons">
+                    <a href="https://wa.me/79219876543" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-whatsapp"></i></a>
+                    <a href="tel:+79219876543" class="text-gray-400 hover:text-white text-xl"><i class="fas fa-phone"></i></a>
+                    <a href="mailto:info@avtovykup-spb.ru" class="text-gray-400 hover:text-white text-xl"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-bold mb-4">Услуги</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#" class="hover:text-white">Выкуп легковых авто</a></li>
+                    <li><a href="#" class="hover:text-white">Выкуп битых авто</a></li>
+                    <li><a href="#" class="hover:text-white">Выкуп кредитных авто</a></li>
+                    <li><a href="#" class="hover:text-white">Выкуп японских авто</a></li>
+                    <li><a href="#" class="hover:text-white">Выкуп немецких авто</a></li>
+                    <li><a href="#" class="hover:text-white">Выкуп внедорожников</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold mb-4">Информация</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#" class="hover:text-white">О компании</a></li>
+                    <li><a href="#" class="hover:text-white">Как мы работаем</a></li>
+                    <li><a href="#" class="hover:text-white">Отзывы клиентов</a></li>
+                    <li><a href="#" class="hover:text-white">Вопросы и ответы</a></li>
+                    <li><a href="#" class="hover:text-white">Политика конфиденциальности</a></li>
+                    <li><a href="#" class="hover:text-white">Пользовательское соглашение</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold mb-4">Контакты</h4>
+                <div class="space-y-2 text-sm text-gray-400 contact-info">
+                    <div class="flex items-center">
+                        <i class="fas fa-phone mr-2"></i>
+                        <a href="tel:+79219876543" class="hover:text-white">+7 (921) 987-65-43</a>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <a href="mailto:info@avtovykup-spb.ru" class="hover:text-white">info@avtovykup-spb.ru</a>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-map-marker-alt mr-2 mt-1"></i>
+                        <span>г. Санкт-Петербург,<br>Невский пр., д. 100</span>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <h5 class="font-medium mb-2">Подписка на новости</h5>
+                    <form class="newsletter-form flex">
+                        <input type="email" placeholder="Ваш email" class="flex-1 px-3 py-2 text-black text-sm rounded-l-lg">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg text-sm">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div>
+                    <p>&copy; 2024 АвтоВыкуп СПб. Все права защищены.</p>
+                    <p class="mt-1">ИНН: 7801234567 | ОГРН: 1187847123456</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <p>Лицензия на осуществление деятельности по скупке автомобилей</p>
+                    <p>Выдана Правительством Санкт-Петербурга</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Cookie banner
+function acceptCookies() {
+    document.getElementById('cookieBanner').classList.remove('show');
+    localStorage.setItem('cookiesAccepted', 'true');
+}
+
+function declineCookies() {
+    document.getElementById('cookieBanner').classList.remove('show');
+    localStorage.setItem('cookiesAccepted', 'false');
+}
+
+// Check if cookies already accepted
+if (localStorage.getItem('cookiesAccepted')) {
+    document.getElementById('cookieBanner').classList.remove('show');
+}
+
+// Animated counters
+function animateCounters() {
+    const counters = document.querySelectorAll('[data-count]');
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-count'));
+        const duration = 2000;
+        const step = target / (duration / 16);
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += step;
+            if (current >= target) {
+                counter.textContent = target;
+                clearInterval(timer);
+            } else {
+                counter.textContent = Math.floor(current);
+            }
+        }, 16);
+    });
+}
+
+// Calculator
+function calculateCost() {
+    const brand = document.getElementById('calcBrand');
+    const year = document.getElementById('calcYear');
+    const mileage = document.getElementById('calcMileage');
+    const condition = document.getElementById('calcCondition');
+    
+    if (!brand.value || !year.value || !mileage.value || !condition.value) {
+        alert('Пожалуйста, заполните все поля');
+        return;
+    }
+    
+    const brandCoeff = parseFloat(brand.selectedOptions[0].getAttribute('data-coeff'));
+    const conditionCoeff = parseFloat(condition.selectedOptions[0].getAttribute('data-coeff'));
+    const currentYear = new Date().getFullYear();
+    const age = currentYear - parseInt(year.value);
+    const km = parseInt(mileage.value);
+    
+    // Base price calculation
+    let basePrice = 800000; // Base price
+    basePrice *= brandCoeff; // Brand coefficient
+    basePrice *= Math.max(0.3, 1 - age * 0.08); // Age depreciation
+    basePrice *= Math.max(0.5, 1 - km / 300000 * 0.3); // Mileage depreciation
+    basePrice *= conditionCoeff; // Condition coefficient
+    
+    const minPrice = Math.floor(basePrice * 0.85);
+    const maxPrice = Math.floor(basePrice * 1.1);
+    
+    document.getElementById('calcResult').innerHTML = `
+        <div class="text-6xl mb-4">💰</div>
+        <div class="text-2xl font-bold text-green-600 mb-2">${minPrice.toLocaleString()} - ${maxPrice.toLocaleString()} ₽</div>
+        <p class="text-gray-600 mb-4">Примерная стоимость вашего автомобиля</p>
+        <button onclick="openQuickForm()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
+            Получить точную оценку
+        </button>
+    `;
+}
+
+// Quiz functionality
+let currentQuizStep = 1;
+let quizAnswers = {};
+
+function nextQuizStep(value) {
+    quizAnswers[currentQuizStep] = value;
+    
+    // Hide current step
+    document.querySelector(`.quiz-step[data-step="${currentQuizStep}"]`).classList.remove('active');
+    
+    currentQuizStep++;
+    
+    if (currentQuizStep <= 3) {
+        // Show next step
+        document.querySelector(`.quiz-step[data-step="${currentQuizStep}"]`).classList.add('active');
+        
+        // Update progress
+        const progress = (currentQuizStep - 1) * 33.33;
+        document.getElementById('quizProgress').style.width = progress + '%';
+    } else {
+        // Show result
+        showQuizResult();
+    }
+}
+
+function showQuizResult() {
+    document.getElementById('quizProgress').style.width = '100%';
+    const resultStep = document.querySelector('.quiz-step[data-step="result"]');
+    if (resultStep) {
+        resultStep.classList.add('active');
+    }
+    
+    // Generate recommendation based on answers
+    let recommendation = '';
+    const carType = quizAnswers[1];
+    const condition = quizAnswers[2];
+    const urgency = quizAnswers[3];
+    
+    if (urgency === 'urgent') {
+        recommendation = '🚨 <strong>Срочный выкуп за 2 часа!</strong><br>Мы понимаем, что вам нужны деньги быстро. Наш специалист приедет к вам в течение часа и проведет моментальную оценку.';
+    } else if (condition === 'damaged') {
+        recommendation = '🔧 <strong>Специальная программа для битых авто</strong><br>Даже после серьезного ДТП ваш автомобиль имеет ценность. Мы предлагаем справедливую цену и бесплатную эвакуацию.';
+    } else if (carType === 'german') {
+        recommendation = '🇩🇪 <strong>Премиум выкуп немецких авто</strong><br>Немецкие автомобили высоко ценятся на рынке. Мы предложим вам до 98% от рыночной стоимости.';
+    } else {
+        recommendation = '✨ <strong>Выгодное предложение для вашего авто</strong><br>Основываясь на ваших ответах, мы подготовили персональное предложение с максимальной выгодой для вас.';
+    }
+    
+    const recElement = document.getElementById('quizRecommendation');
+    if (recElement) {
+        recElement.innerHTML = recommendation;
+    }
+}
+
+// FAQ toggle
+function toggleFAQ(index) {
+    const faqItems = document.querySelectorAll('.faq-item');
+    const item = faqItems[index];
+    if (!item) return;
+    
+    const answer = item.querySelector('.faq-answer');
+    const icon = item.querySelector('.fa-chevron-down');
+    
+    if (answer && icon) {
+        if (answer.style.display === 'none' || !answer.style.display) {
+            answer.style.display = 'block';
+            icon.style.transform = 'rotate(180deg)';
+        } else {
+            answer.style.display = 'none';
+            icon.style.transform = 'rotate(0deg)';
+        }
+    }
+}
+
+// Form submissions
+function openQuickForm() {
+    alert('Быстрая оценка авто! Сейчас с вами свяжется наш специалист.');
+}
+
+function closeModal() {
+    const modal = document.getElementById('modal');
+    if (modal) {
+        modal.classList.add('hidden');
+    }
+}
+
+// Countdown timer for special offer
+function updateCountdown() {
+    const endOfMonth = new Date();
+    endOfMonth.setMonth(endOfMonth.getMonth() + 1);
+    endOfMonth.setDate(1);
+    endOfMonth.setHours(0, 0, 0, 0);
+    
+    const now = new Date();
+    const diff = endOfMonth - now;
+    
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+    
+    if (daysEl) daysEl.textContent = days;
+    if (hoursEl) hoursEl.textContent = hours;
+    if (minutesEl) minutesEl.textContent = minutes;
+    if (secondsEl) secondsEl.textContent = seconds;
+}
+
+// Mobile menu toggle
+function toggleMobileMenu() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    
+    if (!mobileMenuBtn || !mobileNav) return;
+    
+    const menuIcon = mobileMenuBtn.querySelector('i');
+    
+    if (mobileNav.classList.contains('hidden')) {
+        mobileNav.classList.remove('hidden');
+        mobileNav.classList.add('show');
+        if (menuIcon) {
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-times');
+        }
+    } else {
+        mobileNav.classList.add('hidden');
+        mobileNav.classList.remove('show');
+        if (menuIcon) {
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+        }
+    }
+}
+
+// Initialize everything when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM загружен, инициализация скриптов...');
+    
+    // Mobile menu button
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    }
+    
+    // Close mobile menu when clicking on links
+    const mobileNav = document.getElementById('mobileNav');
+    if (mobileNav) {
+        const mobileLinks = mobileNav.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileNav.classList.add('hidden');
+                mobileNav.classList.remove('show');
+                const menuIcon = mobileMenuBtn?.querySelector('i');
+                if (menuIcon) {
+                    menuIcon.classList.remove('fa-times');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+        });
+    }
+    
+    // Quiz options click handler
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('quiz-option') || e.target.closest('.quiz-option')) {
+            const button = e.target.classList.contains('quiz-option') ? e.target : e.target.closest('.quiz-option');
+            const value = button.getAttribute('data-value');
+            if (value) {
+                nextQuizStep(value);
+            }
+        }
+    });
+    
+    // Form submissions
+    document.addEventListener('submit', function(e) {
+        if (e.target.tagName === 'FORM') {
+            e.preventDefault();
+            
+            // Basic validation
+            const requiredFields = e.target.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (field.type === 'checkbox') {
+                    if (!field.checked) {
+                        isValid = false;
+                    }
+                } else if (!field.value.trim()) {
+                    isValid = false;
+                    field.style.borderColor = 'red';
+                } else {
+                    field.style.borderColor = '';
+                }
+            });
+            
+            if (isValid) {
+                alert('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
+                e.target.reset();
+            } else {
+                alert('Пожалуйста, заполните все обязательные поля');
+            }
+        }
+    });
+    
+    // Animate counters when they come into view
+    const counterElements = document.querySelectorAll('[data-count]');
+    if (counterElements.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        
+        const statsSection = counterElements[0].closest('section');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    }
+    
+    // Start countdown timer
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+    
+    // Add fade-in animation on scroll
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    });
+    
+    fadeElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        fadeObserver.observe(el);
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    console.log('Все скрипты инициализированы успешно!');
+});
+</script>
+</body>
+</html>
