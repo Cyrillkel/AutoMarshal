@@ -133,6 +133,38 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+// Функция для скачивания всех документов
+function downloadAllDocuments() {
+  // Список документов для скачивания
+  const documents = [
+    {
+      url: "assets/documents/dogovor-kupli-prodazhi.pdf",
+      filename: "Договор купли-продажи.pdf",
+    },
+    {
+      url: "assets/documents/dogovor-komissii.pdf",
+      filename: "Договор комиссии.pdf",
+    },
+    {
+      url: "assets/documents/dogovor-obmena.pdf",
+      filename: "Договор обмена.pdf",
+    },
+  ];
+
+  // Скачиваем каждый документ
+  documents.forEach((doc, index) => {
+    setTimeout(() => {
+      const link = document.createElement("a");
+      link.href = doc.url;
+      link.download = doc.filename;
+      link.style.display = "none";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }, index * 500); // Задержка между скачиваниями
+  });
+}
+
 // Mobile dropdown menu functionality
 document.addEventListener("DOMContentLoaded", function() {
   // Mobile dropdown trigger

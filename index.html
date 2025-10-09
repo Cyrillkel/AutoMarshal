@@ -37,6 +37,8 @@
 
     <!-- Local SCSS Styles -->
     <link rel="stylesheet" href="css/styles.css" />
+    <!-- FontAwesome Custom - только нужные иконки -->
+    <link rel="stylesheet" href="assets/fonts/fontawesome/css/all.min.css" />
   </head>
   <body>
     <!-- Header -->
@@ -712,7 +714,206 @@
 
     <!-- Main Content -->
     <main>
-      <!-- Content will be added here -->
+      <!-- HERO: start -->
+      <!-- NOTE: inline background for future WordPress customization -->
+      <section class="hero" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <div class="container">
+          <div class="hero__grid">
+            <div class="hero__content">
+              <h1 class="hero__title">
+                Выкуп авто в СПб срочно и дорого за 2 часа
+              </h1>
+              <p class="hero__subtitle">
+                🚀 Оценка до 98% рыночной стоимости<br />
+                ⚡ Деньги в день обращения<br />
+                🆓 Бесплатный выезд специалиста<br />
+                📋 Работаем с любыми авто
+              </p>
+
+              <div class="hero__actions">
+                <button class="btn btn--primary" onclick="document.getElementById('calculator').scrollIntoView({behavior: 'smooth'})">
+                  <i class="fa fa-calculator text-primary" aria-hidden="true"></i>
+                  Калькулятор стоимости авто
+                </button>
+                <a href="tel:+79219876543" class="btn btn--outline">Позвонить сейчас</a>
+              </div>
+            </div>
+
+            <div class="hero__form">
+              <div class="hero__form-card">
+                <h3 class="hero__form-title">Заявка на выкуп авто</h3>
+                <form id="heroForm" class="hero__form-fields">
+                  <div class="hero__field">
+                    <select class="hero__input" required>
+                      <option value="">Выберите марку авто</option>
+                      <option value="toyota">Toyota</option>
+                      <option value="bmw">BMW</option>
+                      <option value="mercedes">Mercedes-Benz</option>
+                      <option value="audi">Audi</option>
+                      <option value="volkswagen">Volkswagen</option>
+                      <option value="kia">Kia</option>
+                      <option value="hyundai">Hyundai</option>
+                      <option value="lada">Lada</option>
+                    </select>
+                  </div>
+                  <div class="hero__field">
+                    <input type="number" placeholder="Год выпуска" min="1990" max="2025" class="hero__input" required />
+                  </div>
+                  <div class="hero__field">
+                    <input type="tel" placeholder="Ваш телефон" class="hero__input" required />
+                  </div>
+                  <label class="hero__agree">
+                    <input type="checkbox" required />
+                    <span>Согласен с <a href="#">политикой конфиденциальности</a></span>
+                  </label>
+                  <button type="submit" class="btn btn--gradient btn--full">Получить оценку</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- HERO: end -->
+
+      <!-- SERVICES: start -->
+      <section class="services">
+        <div class="container">
+          <div class="services__header">
+            <h2 class="services__title">
+              <i class="fas fa-tools services__title-icon"></i>
+              Наши услуги
+            </h2>
+            <p class="services__subtitle">Полный спектр автомобильных услуг для вашего удобства</p>
+          </div>
+          
+          <div class="services__grid">
+            <!-- Выкуп автомобилей -->
+            <div class="services__card">
+              <div class="services__icon">
+                <i class="fas fa-car"></i>
+              </div>
+              <h3 class="services__card-title">Выкуп автомобилей</h3>
+              <p class="services__card-text">Лучшие предложения по выкупу автомобилей, любых:</p>
+              <ul class="services__list">
+                <li class="services__list-item">
+                  <i class="fas fa-check services__check"></i>
+                  Целые с пробегом
+                </li>
+                <li class="services__list-item">
+                  <i class="fas fa-check services__check"></i>
+                  Проблемные
+                </li>
+                <li class="services__list-item">
+                  <i class="fas fa-check services__check"></i>
+                  Аварийные
+                </li>
+                <li class="services__list-item">
+                  <i class="fas fa-check services__check"></i>
+                  Кредитные
+                </li>
+                <li class="services__list-item">
+                  <i class="fas fa-check services__check"></i>
+                  Арестованные
+                </li>
+              </ul>
+              <button class="btn btn--gradient btn--full">Узнать стоимость</button>
+            </div>
+
+            <!-- Обмен авто на авто -->
+            <div class="services__card">
+              <div class="services__icon">
+                <i class="fas fa-exchange-alt"></i>
+              </div>
+              <h3 class="services__card-title">Обмен авто на авто (trade-in)</h3>
+              <p class="services__card-text">Уникальная возможность обменять ваш автомобиль с доплатой, подобрав вам подходящий вариант.</p>
+              <button class="btn btn--gradient btn--full">Подобрать авто</button>
+            </div>
+
+            <!-- Прием авто на комиссию -->
+            <div class="services__card">
+              <div class="services__icon">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <h3 class="services__card-title">Прием авто на комиссию</h3>
+              <p class="services__card-text">Честная и профессиональная экспертиза, реклама, переговоры с клиентами, подготовка документов, сопровождение сделки.</p>
+              <ul class="services__list">
+                <li class="services__list-item">
+                  <i class="fas fa-check services__check"></i>
+                  Прием на комиссию целых авто
+                </li>
+                <li class="services__list-item">
+                  <i class="fas fa-check services__check"></i>
+                  Прием битых авто
+                </li>
+              </ul>
+              <button class="btn btn--gradient btn--full">Оставить на комиссии</button>
+            </div>
+
+            <!-- Помощь в покупке -->
+            <div class="services__card">
+              <div class="services__icon">
+                <i class="fas fa-search"></i>
+              </div>
+              <h3 class="services__card-title">Помощь в покупке автомобилей</h3>
+              <p class="services__card-text">Профессиональная помощь в выборе автомобиля на любых торговых площадках с проверкой юридической чистоты.</p>
+              <button class="btn btn--gradient btn--full">Подобрать авто</button>
+            </div>
+
+            <!-- Наш каталог авто -->
+            <div class="services__card">
+              <div class="services__icon">
+                <i class="fas fa-list"></i>
+              </div>
+              <h3 class="services__card-title">Наш каталог авто</h3>
+              <p class="services__card-text">Каталог проверенных автомобилей в отличном состоянии, где вы можете найти подробную информацию о каждом авто.</p>
+              <button class="btn btn--gradient btn--full">Посмотреть каталог</button>
+            </div>
+
+            <!-- Авто-разборка -->
+            <div class="services__card">
+              <div class="services__icon">
+                <i class="fas fa-wrench"></i>
+              </div>
+              <h3 class="services__card-title">Авто-разборка</h3>
+              <p class="services__card-text">Прием автомобилей для разборки на запчасти в любом состоянии.</p>
+              <ul class="services__list">
+                <li class="services__list-item">
+                  <i class="fas fa-check services__check"></i>
+                  Прием б/у запчастей
+                </li>
+              </ul>
+              <button class="btn btn--gradient btn--full">Сдать на разборку</button>
+            </div>
+
+            <!-- Предложения партнеров -->
+            <div class="services__card">
+              <div class="services__icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3 class="services__card-title">Предложения партнеров</h3>
+              <p class="services__card-text">Сотрудничаем с лучшими организациями. Если у вас есть интересные идеи, мы всегда открыты к сотрудничеству.</p>
+              <button class="btn btn--gradient btn--full">Стать партнером</button>
+            </div>
+
+            <!-- Образцы договоров -->
+            <div class="services__card">
+              <div class="services__icon">
+                <i class="fas fa-file-contract"></i>
+              </div>
+              <h3 class="services__card-title">Образцы договоров</h3>
+              <div class="services__download">
+                <a href="assets/documents/dogovor-kupli-prodazhi.pdf" download="Договор купли-продажи.pdf" class="services__download-link">
+                  <i class="fas fa-download"></i>
+                  <span>Договор купли-продажи</span>
+                </a>
+              </div>
+              <button class="btn btn--gradient btn--full" onclick="downloadAllDocuments()">Скачать образцы</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SERVICES: end -->
+
     </main>
 
     <!-- Scripts -->

@@ -10,6 +10,10 @@
   padding: 0 1rem;
   box-sizing: border-box;
 
+  @media (max-width: 480px) {
+    padding: 0 1rem;
+  }
+
   @media (min-width: 640px) {
     max-width: 640px;
     padding: 0 1.5rem;

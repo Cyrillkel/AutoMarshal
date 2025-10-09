@@ -1,0 +1,104 @@
+/*!
+ * Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ * Copyright 2024 Fonticons, Inc.
+ */
+
+/* =============================================================
+   FONTAWESOME CUSTOM - только нужные иконки
+   ============================================================= */
+
+/* Font Face */
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../webfonts/fa-solid-900.woff2") format("woff2"),
+    url("../webfonts/fa-solid-900.woff") format("woff"),
+    url("../webfonts/fa-solid-900.ttf") format("truetype");
+}
+
+/* Base Classes */
+.fa,
+.fas {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+/* Icons - только нужные */
+.fa-calculator::before {
+  content: "\f1ec";
+} /* calculator */
+.fa-phone::before {
+  content: "\f095";
+} /* phone */
+.fa-envelope::before {
+  content: "\f0e0";
+} /* envelope */
+.fa-map-marker-alt::before {
+  content: "\f3c5";
+} /* location-dot */
+.fa-clock::before {
+  content: "\f017";
+} /* clock */
+.fa-car::before {
+  content: "\f1b9";
+} /* car */
+.fa-money-bill-wave::before {
+  content: "\f53a";
+} /* money-bill-wave */
+.fa-shield-alt::before {
+  content: "\f3ed";
+} /* shield-halved */
+.fa-star::before {
+  content: "\f005";
+} /* star */
+.fa-check::before {
+  content: "\f00c";
+} /* check */
+.fa-arrow-right::before {
+  content: "\f061";
+} /* arrow-right */
+.fa-arrow-down::before {
+  content: "\f063";
+} /* arrow-down */
+.fa-bars::before {
+  content: "\f0c9";
+} /* bars */
+.fa-times::before {
+  content: "\f00d";
+} /* xmark */
+.fa-search::before {
+  content: "\f002";
+} /* magnifying-glass */
+.fa-user::before {
+  content: "\f007";
+} /* user */
+.fa-calendar::before {
+  content: "\f073";
+} /* calendar */
+.fa-wrench::before {
+  content: "\f0ad";
+} /* wrench */
+.fa-tools::before {
+  content: "\f7d9";
+} /* tools */
+.fa-handshake::before {
+  content: "\f2b5";
+} /* handshake */
+.fa-exchange-alt::before {
+  content: "\f362";
+} /* exchange-alt */
+.fa-list::before {
+  content: "\f03a";
+} /* list */
+.fa-users::before {
+  content: "\f0c0";
+} /* users */
+.fa-file-contract::before {
+  content: "\f56c";
+} /* file-contract */
+.fa-download::before {
+  content: "\f019";
+} /* download */
