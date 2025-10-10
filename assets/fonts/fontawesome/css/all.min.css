@@ -102,3 +102,6 @@
 .fa-download::before {
   content: "\f019";
 } /* download */
+.fa-paper-plane::before {
+  content: "\f1d8";
+} /* paper-plane */
