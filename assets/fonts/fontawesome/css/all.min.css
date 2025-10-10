@@ -105,3 +105,54 @@
 .fa-paper-plane::before {
   content: "\f1d8";
 } /* paper-plane */
+.fa-id-card::before {
+  content: "\f2c2";
+} /* id-card */
+.fa-file-alt::before {
+  content: "\f15c";
+} /* file-alt */
+.fa-certificate::before {
+  content: "\f0a3";
+} /* certificate */
+.fa-key::before {
+  content: "\f084";
+} /* key */
+.fa-shield-alt::before {
+  content: "\f3ed";
+} /* shield-alt */
+.fa-check-circle::before {
+  content: "\f058";
+} /* check-circle */
+.fa-star::before {
+  content: "\f005";
+} /* star */
+.fa-van-shuttle::before {
+  content: "\f5b6";
+} /* van-shuttle */
+.fa-car-side::before {
+  content: "\f5e4";
+} /* car-side */
+.fa-map-marker-alt::before {
+  content: "\f3c5";
+} /* map-marker-alt */
+.fa-road::before {
+  content: "\f018";
+} /* road */
+.fa-calendar::before {
+  content: "\f073";
+} /* calendar */
+.fa-eye::before {
+  content: "\f06e";
+} /* eye */
+.fa-phone::before {
+  content: "\f095";
+} /* phone */
+.fa-car::before {
+  content: "\f1b9";
+} /* car */
+.fa-file-contract::before {
+  content: "\f56c";
+} /* file-contract */
+.fa-money-bill-wave::before {
+  content: "\f53a";
+} /* money-bill-wave */
