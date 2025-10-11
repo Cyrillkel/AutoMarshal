@@ -322,3 +322,63 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(element);
   });
 });
+
+// Initialize Swiper for fresh arrivals
+document.addEventListener("DOMContentLoaded", function() {
+  const freshSwiper = new Swiper(".fresh__swiper", {
+    // Optional parameters
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    speed: 600,
+
+    // Responsive breakpoints
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1.3,
+        spaceBetween: 15,
+        centeredSlides: false,
+      },
+      // when window width is >= 768px
+      768: {
+        slidesPerView: 2.5,
+        spaceBetween: 15,
+        centeredSlides: false,
+      },
+      // when window width is >= 1024px
+      1024: {
+        slidesPerView: 3.4,
+        spaceBetween: 15,
+        centeredSlides: false,
+      },
+      // when window width is >= 1280px
+      1280: {
+        slidesPerView: 4.5,
+        spaceBetween: 15,
+        centeredSlides: false,
+      },
+    },
+
+    // Effects
+    effect: "slide",
+    grabCursor: true,
+
+    // Keyboard control
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+    },
+
+    // Accessibility
+    a11y: {
+      enabled: true,
+      prevSlideMessage: "Предыдущий слайд",
+      nextSlideMessage: "Следующий слайд",
+      firstSlideMessage: "Это первый слайд",
+      lastSlideMessage: "Это последний слайд",
+    },
+  });
+});

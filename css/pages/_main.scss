@@ -694,7 +694,7 @@
 
   &__header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
   }
 
   &__title {
@@ -741,21 +741,29 @@
     }
   }
 
-  &__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  &__swiper {
+    margin-bottom: 3rem;
+    padding: 3rem 3rem 3rem 4rem;
+    position: relative;
+    overflow: visible;
+    border-radius: 0;
 
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
+    // Swiper slide styles
+    .swiper-slide {
+      height: auto;
+      display: flex;
+      align-items: stretch;
     }
 
-    @media (min-width: 1024px) {
-      grid-template-columns: repeat(3, 1fr);
+    // Ensure proper spacing for hover effects
+    .swiper-wrapper {
+      align-items: stretch;
+      padding: 2rem 0;
     }
 
-    @media (min-width: 1280px) {
-      grid-template-columns: repeat(5, 1fr);
+    // Add extra space for hover effects
+    .swiper-container {
+      overflow: visible;
     }
   }
 
@@ -763,17 +771,18 @@
     background: #ffffff;
     border-radius: 0.9375rem;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 12px 6px 15px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     position: relative;
     display: flex;
     flex-direction: column;
     height: 100%;
     cursor: pointer;
+    width: 100%;
 
     &:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      box-shadow: 15px 12px 20px rgba(0, 0, 0, 0.12);
     }
   }
 

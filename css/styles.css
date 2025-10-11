@@ -315,6 +315,28 @@ template {
 }
 
 /* ==========================================================================
+   CUSTOM OUTLINE RESET - Accessibility-friendly approach
+   ========================================================================== */
+/* Remove default outline from interactive elements */
+button,
+input,
+textarea,
+select,
+a:focus {
+  outline: none;
+}
+
+/* Ensure focus is visible for accessibility */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
    FONTS
    ========================================================================== */
 /* Inter Variable Font */
@@ -2117,7 +2139,7 @@ body {
 }
 .fresh__header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 .fresh__title {
   font-size: 1.875rem;
@@ -2167,37 +2189,37 @@ body {
 .fresh__catalog-link:hover {
   color: #1d4ed8;
 }
-.fresh__grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+.fresh__swiper {
+  margin-bottom: 3rem;
+  padding: 3rem 3rem 3rem 4rem;
+  position: relative;
+  overflow: visible;
+  border-radius: 0;
 }
-@media (min-width: 768px) {
-  .fresh__grid {
-    -ms-grid-columns: (1fr)[2];
-    grid-template-columns: repeat(2, 1fr);
-  }
+.fresh__swiper .swiper-slide {
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
-@media (min-width: 1024px) {
-  .fresh__grid {
-    -ms-grid-columns: (1fr)[3];
-    grid-template-columns: repeat(3, 1fr);
-  }
+.fresh__swiper .swiper-wrapper {
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  padding: 2rem 0;
 }
-@media (min-width: 1280px) {
-  .fresh__grid {
-    -ms-grid-columns: (1fr)[5];
-    grid-template-columns: repeat(5, 1fr);
-  }
+.fresh__swiper .swiper-container {
+  overflow: visible;
 }
 .fresh__card {
   background: #ffffff;
   border-radius: 0.9375rem;
   overflow: hidden;
-  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 12px 6px 15px rgba(0, 0, 0, 0.08);
+          box-shadow: 12px 6px 15px rgba(0, 0, 0, 0.08);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   position: relative;
@@ -2210,12 +2232,13 @@ body {
           flex-direction: column;
   height: 100%;
   cursor: pointer;
+  width: 100%;
 }
 .fresh__card:hover {
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
-  -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 15px 12px 20px rgba(0, 0, 0, 0.12);
+          box-shadow: 15px 12px 20px rgba(0, 0, 0, 0.12);
 }
 .fresh__image {
   position: relative;
