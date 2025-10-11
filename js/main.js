@@ -244,3 +244,81 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
+
+// FAQ toggle functionality
+function toggleFAQ(index) {
+  const faqItems = document.querySelectorAll(".faq__item");
+  const item = faqItems[index];
+  if (!item) return;
+
+  const answer = item.querySelector(".faq__answer");
+  const icon = item.querySelector(".faq__icon");
+
+  if (answer && icon) {
+    // Check if current item is already active
+    const isActive = item.classList.contains("active");
+
+    // Close all other FAQ items first
+    document.querySelectorAll(".faq__item").forEach((faqItem) => {
+      faqItem.classList.remove("active");
+      const faqAnswer = faqItem.querySelector(".faq__answer");
+      if (faqAnswer) {
+        faqAnswer.classList.remove("faq__answer--active");
+      }
+    });
+
+    // If current item was not active, open it
+    if (!isActive) {
+      item.classList.add("active");
+      answer.classList.add("faq__answer--active");
+    }
+  }
+}
+
+// Animated counters
+function animateCounters() {
+  const counters = document.querySelectorAll("[data-count]");
+  counters.forEach((counter) => {
+    const target = parseInt(counter.getAttribute("data-count"));
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        counter.textContent = target;
+        clearInterval(timer);
+      } else {
+        counter.textContent = Math.floor(current);
+      }
+    }, 16);
+  });
+}
+
+// Fade in animation on scroll
+document.addEventListener("DOMContentLoaded", function() {
+  const fadeElements = document.querySelectorAll(".fade-in");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+
+          // Animate counters when statistics section comes into view
+          if (entry.target.closest(".statistics")) {
+            animateCounters();
+          }
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+
+  fadeElements.forEach((element) => {
+    observer.observe(element);
+  });
+});
