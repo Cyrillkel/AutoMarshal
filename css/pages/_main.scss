@@ -364,6 +364,137 @@
     }
   }
 
+  /* Flip card styles */
+  &__flip {
+    perspective: 1000px; /* 3D perspective for parent */
+
+    // Enable tap to flip on mobile
+    &:active .services__flip-inner {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__flip-inner {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    min-height: 260px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+  }
+
+  // Flip on hover for desktop
+  &__flip:hover .services__flip-inner {
+    transform: rotateY(180deg);
+  }
+
+  &__front,
+  &__back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    justify-content: space-between;
+  }
+
+  &__front {
+    // front inherits base card look
+  }
+
+  &__back {
+    transform: rotateY(180deg);
+    background: #ffffff;
+    text-align: left;
+    justify-content: space-between;
+    align-items: stretch;
+
+    .services__card-text {
+      text-align: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .services__list {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .services__list-container {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    // For cards without lists, center the text
+    &:not(:has(.services__list)) {
+      .services__card-text {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    .btn {
+      margin-top: auto;
+    }
+  }
+
+  &__flip-hint {
+    margin-top: 0.25rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+
+  // Compact spacing for flip cards
+  &__flip {
+    .services__list {
+      margin: 0.5rem 0;
+
+      &-item {
+        margin-bottom: 0.25rem;
+        font-size: 0.875rem;
+      }
+    }
+
+    .services__card-text {
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+      line-height: 1.4;
+    }
+
+    .btn {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+    }
+  }
+
+  // Responsive height adjustments
+  @media (max-width: 768px) {
+    &__flip-inner {
+      height: 220px;
+      min-height: 220px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__flip-inner {
+      height: 200px;
+      min-height: 200px;
+    }
+  }
+
   &__icon {
     width: 4.375rem;
     height: 4.375rem;
@@ -391,6 +522,7 @@
     font-weight: $font-weight-semibold;
     color: #1f2937;
     margin: 0 0 0.75rem;
+    white-space: nowrap;
   }
 
   &__card-text {
@@ -419,12 +551,13 @@
   }
 
   &__download {
-    margin: 0 0 1.5rem;
+    margin: 1.5rem;
   }
 
   &__download-link {
     display: flex;
     align-items: center;
+    justify-content: center;
     color: #2563eb;
     cursor: pointer;
     transition: color 0.2s ease;

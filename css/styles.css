@@ -1697,6 +1697,7 @@ body {
 .services {
   padding: 4rem 0;
   background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  /* Flip card styles */
 }
 .services__header {
   text-align: center;
@@ -1799,6 +1800,146 @@ body {
   -webkit-animation: gradientShift 3s ease infinite;
           animation: gradientShift 3s ease infinite;
 }
+.services__flip {
+  -webkit-perspective: 1000px;
+          perspective: 1000px; /* 3D perspective for parent */
+}
+.services__flip:active .services__flip-inner {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+.services__flip-inner {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  min-height: 260px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+}
+.services__flip:hover .services__flip-inner {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+.services__front, .services__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.services__back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  background: #ffffff;
+  text-align: left;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+.services__back .services__card-text {
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+.services__back .services__list {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.services__back .services__list-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.services__back:not(:has(.services__list)) .services__card-text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+.services__back .btn {
+  margin-top: auto;
+}
+.services__flip-hint {
+  margin-top: 0.25rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+.services__flip .services__list {
+  margin: 0.5rem 0;
+}
+.services__flip .services__list-item {
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+}
+.services__flip .services__card-text {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+.services__flip .btn {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+@media (max-width: 768px) {
+  .services__flip-inner {
+    height: 220px;
+    min-height: 220px;
+  }
+}
+@media (max-width: 480px) {
+  .services__flip-inner {
+    height: 200px;
+    min-height: 200px;
+  }
+}
 .services__icon {
   width: 4.375rem;
   height: 4.375rem;
@@ -1831,6 +1972,7 @@ body {
   font-weight: 600;
   color: #1f2937;
   margin: 0 0 0.75rem;
+  white-space: nowrap;
 }
 .services__card-text {
   color: #4b5563;
@@ -1858,7 +2000,7 @@ body {
   font-size: 0.875rem;
 }
 .services__download {
-  margin: 0 0 1.5rem;
+  margin: 1.5rem;
 }
 .services__download-link {
   display: -webkit-box;
@@ -1867,6 +2009,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: #2563eb;
   cursor: pointer;
   -webkit-transition: color 0.2s ease;
