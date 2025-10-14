@@ -382,3 +382,221 @@ document.addEventListener("DOMContentLoaded", function() {
     },
   });
 });
+
+// Calculator functionality
+function calculateCost() {
+  const brand = document.getElementById("calcBrand");
+  const year = document.getElementById("calcYear");
+  const mileage = document.getElementById("calcMileage");
+  const condition = document.getElementById("calcCondition");
+  const resultDiv = document.getElementById("calcResult");
+
+  // Check if all fields are filled
+  if (!brand.value || !year.value || !mileage.value || !condition.value) {
+    resultDiv.innerHTML = `
+      <div class="calculator__result-icon">⚠️</div>
+      <p class="calculator__result-text">Пожалуйста, заполните все поля</p>
+    `;
+    return;
+  }
+
+  // Get coefficients
+  const brandCoeff = parseFloat(brand.selectedOptions[0].dataset.coeff);
+  const conditionCoeff = parseFloat(condition.selectedOptions[0].dataset.coeff);
+
+  // Base calculation
+  const currentYear = new Date().getFullYear();
+  const carAge = currentYear - parseInt(year.value);
+  const mileageValue = parseInt(mileage.value);
+
+  // Base price calculation (simplified formula)
+  let basePrice = 500000; // Base price in rubles
+
+  // Adjust for age (newer cars are more expensive)
+  const ageMultiplier = Math.max(0.3, 1 - carAge * 0.05);
+
+  // Adjust for mileage (lower mileage = higher price)
+  const mileageMultiplier = Math.max(0.4, 1 - mileageValue / 200000);
+
+  // Calculate final price
+  const finalPrice = Math.round(
+    basePrice * brandCoeff * conditionCoeff * ageMultiplier * mileageMultiplier
+  );
+
+  // Format price
+  const formattedPrice = new Intl.NumberFormat("ru-RU", {
+    style: "currency",
+    currency: "RUB",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(finalPrice);
+
+  // Show result
+  resultDiv.innerHTML = `
+    <div class="calculator__result-icon">💰</div>
+    <h4 style="font-size: 1.5rem; font-weight: bold; color: #10b981; margin: 0 0 0.5rem;">${formattedPrice}</h4>
+    <p class="calculator__result-text">Примерная стоимость вашего автомобиля</p>
+    <div style="margin-top: 1rem; padding: 0.75rem; background: #f0fdf4; border-radius: 0.375rem; font-size: 0.875rem; color: #166534;">
+      <strong>Обратите внимание:</strong> Это предварительная оценка. Точную стоимость можно узнать после осмотра автомобиля нашим специалистом.
+    </div>
+  `;
+}
+
+// Quiz functionality
+document.addEventListener("DOMContentLoaded", function() {
+  const quizContainer = document.getElementById("quiz");
+  const progressFill = document.getElementById("quizProgress");
+  const quizForm = document.getElementById("quizForm");
+  const recommendationDiv = document.getElementById("quizRecommendation");
+
+  if (!quizContainer || !progressFill) return;
+
+  let currentStep = 1;
+  const totalSteps = 3;
+  const answers = {};
+
+  // Initialize quiz
+  function initQuiz() {
+    showStep(1);
+    updateProgress();
+  }
+
+  // Show specific step
+  function showStep(step) {
+    const steps = quizContainer.querySelectorAll(".quiz__step");
+    steps.forEach((stepEl, index) => {
+      if (index + 1 === step) {
+        stepEl.classList.add("quiz__step--active");
+      } else {
+        stepEl.classList.remove("quiz__step--active");
+      }
+    });
+  }
+
+  // Update progress bar
+  function updateProgress() {
+    const progress = (currentStep / totalSteps) * 100;
+    progressFill.style.width = `${progress}%`;
+  }
+
+  // Handle option selection
+  function selectOption(step, value) {
+    answers[`step${step}`] = value;
+
+    if (currentStep < totalSteps) {
+      currentStep++;
+      showStep(currentStep);
+      updateProgress();
+    } else {
+      showResult();
+    }
+  }
+
+  // Show result
+  function showResult() {
+    currentStep = 4; // result step
+    showStep(4);
+    updateProgress();
+    generateRecommendation();
+  }
+
+  // Generate recommendation based on answers
+  function generateRecommendation() {
+    const brand = answers.step1;
+    const condition = answers.step2;
+    const urgency = answers.step3;
+
+    let recommendation = "";
+
+    // Brand-based recommendations
+    if (brand === "japanese") {
+      recommendation +=
+        "🇯🇵 <strong>Японские автомобили</strong> - отличный выбор! Toyota, Honda, Nissan пользуются высоким спросом на рынке.<br><br>";
+    } else if (brand === "german") {
+      recommendation +=
+        "🇩🇪 <strong>Немецкие автомобили</strong> - премиум сегмент с хорошей ликвидностью. BMW, Mercedes, Audi всегда востребованы.<br><br>";
+    } else if (brand === "korean") {
+      recommendation +=
+        "🇰🇷 <strong>Корейские автомобили</strong> - отличное соотношение цена/качество. Kia и Hyundai быстро продаются.<br><br>";
+    } else if (brand === "russian") {
+      recommendation +=
+        "🇷🇺 <strong>Отечественные автомобили</strong> - доступная цена и простота обслуживания привлекают покупателей.<br><br>";
+    }
+
+    // Condition-based recommendations
+    if (condition === "excellent") {
+      recommendation +=
+        "✨ <strong>Отличное состояние</strong> - ваш автомобиль в идеальном состоянии! Это значительно повышает его стоимость.<br><br>";
+    } else if (condition === "good") {
+      recommendation +=
+        "👍 <strong>Хорошее состояние</strong> - мелкие дефекты не критичны, автомобиль легко продать.<br><br>";
+    } else if (condition === "repair") {
+      recommendation +=
+        "🔧 <strong>Требует ремонта</strong> - мы выкупаем автомобили в любом состоянии, включая требующие ремонта.<br><br>";
+    } else if (condition === "damaged") {
+      recommendation +=
+        "💥 <strong>После ДТП</strong> - даже битые автомобили имеют ценность. Мы оценим и предложим справедливую цену.<br><br>";
+    }
+
+    // Urgency-based recommendations
+    if (urgency === "urgent") {
+      recommendation +=
+        "🚨 <strong>Срочная продажа</strong> - мы готовы выехать сегодня! Быстрая оценка и моментальная выплата.<br><br>";
+    } else if (urgency === "week") {
+      recommendation +=
+        "📅 <strong>Продажа в течение недели</strong> - у нас есть время для детальной оценки и подготовки документов.<br><br>";
+    } else if (urgency === "considering") {
+      recommendation +=
+        "🤔 <strong>Изучение вариантов</strong> - отличное решение! Сравните наши условия с другими предложениями.<br><br>";
+    }
+
+    recommendation +=
+      "💡 <strong>Наше предложение:</strong> Бесплатная оценка, выезд специалиста, честная цена до 98% рыночной стоимости, моментальная выплата наличными или на карту.";
+
+    recommendationDiv.innerHTML = recommendation;
+  }
+
+  // Handle form submission
+  if (quizForm) {
+    quizForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(quizForm);
+      const name =
+        formData.get("name") ||
+        quizForm.querySelector('input[type="text"]').value;
+      const phone =
+        formData.get("phone") ||
+        quizForm.querySelector('input[type="tel"]').value;
+
+      if (name && phone) {
+        // Here you would typically send the data to your server
+        alert(
+          `Спасибо, ${name}! Мы свяжемся с вами по телефону ${phone} в ближайшее время.`
+        );
+
+        // Reset quiz
+        currentStep = 1;
+        answers = {};
+        initQuiz();
+        quizForm.reset();
+      }
+    });
+  }
+
+  // Add event listeners to quiz options
+  const quizOptions = quizContainer.querySelectorAll(".quiz__option");
+  quizOptions.forEach((option) => {
+    option.addEventListener("click", function() {
+      const step = this.closest(".quiz__step").dataset.step;
+      const value = this.dataset.value;
+
+      if (step && value) {
+        selectOption(parseInt(step), value);
+      }
+    });
+  });
+
+  // Initialize quiz on page load
+  initQuiz();
+});

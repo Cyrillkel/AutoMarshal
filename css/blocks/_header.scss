@@ -87,7 +87,7 @@
   &__nav {
     &--desktop {
       display: none;
-      gap: 1.5rem;
+      gap: 2.5rem;
 
       @media (min-width: 1024px) {
         display: flex;
@@ -121,6 +121,8 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      font-size: 1.2rem;
+      font-weight: $font-weight-medium;
 
       &:hover {
         color: #2563eb;
