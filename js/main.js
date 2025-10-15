@@ -615,3 +615,47 @@ document.addEventListener("DOMContentLoaded", function() {
   // Initialize quiz on page load
   initQuiz();
 });
+
+// Special Offer Countdown
+document.addEventListener("DOMContentLoaded", function() {
+  const countdownElement = document.getElementById("countdown");
+
+  if (!countdownElement) return;
+
+  // Set the end date (end of current month)
+  const now = new Date();
+  const endOfMonth = new Date(
+    now.getFullYear(),
+    now.getMonth() + 1,
+    0,
+    23,
+    59,
+    59
+  );
+
+  function updateCountdown() {
+    const now = new Date();
+    const timeLeft = endOfMonth - now;
+
+    if (timeLeft <= 0) {
+      countdownElement.innerHTML = "Акция завершена";
+      return;
+    }
+
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+  }
+
+  // Update countdown every second
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+});
