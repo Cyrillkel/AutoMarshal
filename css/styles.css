@@ -1939,6 +1939,12 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+@media (min-width: 1024px) {
+  .quiz__options--grid {
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 .quiz__options--list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3366,6 +3372,90 @@ body {
 .animate-counter {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   CAR TYPES SECTION
+   ========================================================================== */
+.car-types {
+  padding: 4rem 0;
+  background-color: #ffffff;
+}
+.car-types__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.car-types__title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  color: #111827;
+}
+.car-types__subtitle {
+  color: #6b7280;
+  font-size: 1.125rem;
+  margin: 0;
+}
+.car-types__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .car-types__grid {
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.car-types__column-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #111827;
+}
+.car-types__column-icon {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+.car-types__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.75rem;
+}
+.car-types__item {
+  background-color: #f9fafb;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+.car-types__item:hover {
+  background-color: #f3f4f6;
+}
+.car-types__item-title {
+  font-weight: 500;
+  color: #111827;
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
+.car-types__item-desc {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.4;
 }
 
 /* ==========================================================================
