@@ -381,6 +381,70 @@ document.addEventListener("DOMContentLoaded", function() {
       lastSlideMessage: "Это последний слайд",
     },
   });
+
+  // Initialize Swiper for reviews
+  const reviewsSwiper = new Swiper(".reviews__swiper", {
+    // Optional parameters
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    speed: 500,
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".reviews__button-next",
+      prevEl: ".reviews__button-prev",
+    },
+
+    // Pagination
+    pagination: {
+      el: ".reviews__pagination",
+      clickable: true,
+    },
+
+    // Responsive breakpoints
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        centeredSlides: false,
+      },
+      // when window width is >= 768px
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        centeredSlides: false,
+      },
+      // when window width is >= 1024px
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+        centeredSlides: false,
+      },
+    },
+
+    // Effects
+    effect: "slide",
+    grabCursor: true,
+
+    // Keyboard control
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+    },
+
+    // Accessibility
+    a11y: {
+      enabled: true,
+      prevSlideMessage: "Предыдущий отзыв",
+      nextSlideMessage: "Следующий отзыв",
+      firstSlideMessage: "Это первый отзыв",
+      lastSlideMessage: "Это последний отзыв",
+    },
+  });
 });
 
 // Calculator functionality
