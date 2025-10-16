@@ -15,7 +15,6 @@
   font-weight: 900;
   font-display: block;
   src: url("../webfonts/fa-solid-900.woff2") format("woff2"),
-    url("../webfonts/fa-solid-900.woff") format("woff"),
     url("../webfonts/fa-solid-900.ttf") format("truetype");
 }
 
@@ -156,3 +155,24 @@
 .fa-money-bill-wave::before {
   content: "\f53a";
 } /* money-bill-wave */
+.fa-taxi::before {
+  content: "\f1ba";
+} /* taxi */
+.fa-map-marked-alt::before {
+  content: "\f5a0";
+} /* map-marked-alt */
+.fa-star::before {
+  content: "\f005";
+} /* star */
+.fa-quote-left::before {
+  content: "\f10d";
+} /* quote-left */
+.fa-chevron-left::before {
+  content: "\f053";
+} /* chevron-left */
+.fa-chevron-right::before {
+  content: "\f054";
+} /* chevron-right */
+.fa-star-o::before {
+  content: "\f006";
+} /* star-o */
