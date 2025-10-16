@@ -2693,3 +2693,110 @@
     line-height: $line-height-normal;
   }
 }
+
+/* ==========================================================================
+   USEFUL TIPS SECTION
+   ========================================================================== */
+.useful-tips {
+  padding: 4rem 0;
+  background-color: #eff6ff; // blue-50 equivalent
+
+  &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &__title {
+    font-size: 1.875rem; // text-3xl
+    font-weight: $font-weight-bold;
+    margin: 0 0 1rem;
+    color: #111827;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__subtitle {
+    color: #6b7280; // text-gray-600
+    font-size: 1.125rem;
+    margin: 0;
+    line-height: $line-height-normal;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+
+  &__card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    @media (max-width: 768px) {
+      padding: 1.25rem;
+    }
+  }
+
+  &__icon {
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+    text-align: left;
+    line-height: 1;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__card-title {
+    font-weight: $font-weight-bold;
+    margin: 0 0 0.75rem;
+    color: #111827;
+    font-size: 1.125rem;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__card-text {
+    color: #6b7280; // text-gray-600
+    font-size: 0.875rem;
+    line-height: $line-height-normal;
+    margin: 0;
+    flex-grow: 1;
+
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+    }
+  }
+}
