@@ -2800,3 +2800,601 @@
     }
   }
 }
+
+/* ==========================================================================
+   GEOGRAPHY SECTION
+   ========================================================================== */
+.geography {
+  padding: 4rem 0;
+  background-color: #f3f4f6; // bg-gray-100 equivalent
+
+  &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &__title {
+    font-size: 1.875rem; // text-3xl
+    font-weight: $font-weight-bold;
+    margin: 0 0 1rem;
+    color: #111827;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__subtitle {
+    color: #6b7280; // text-gray-600
+    font-size: 1.125rem;
+    margin: 0;
+    line-height: $line-height-normal;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 64rem; // max-w-4xl
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__section-title {
+    font-size: 1.25rem; // text-xl
+    font-weight: $font-weight-bold;
+    margin: 0 0 1rem;
+    color: #111827;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__section-icon {
+    font-size: 1.5rem; // text-2xl
+    margin-right: 0.5rem;
+    line-height: 1;
+  }
+
+  &__card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+    @media (max-width: 768px) {
+      padding: 1.25rem;
+    }
+  }
+
+  // Districts (SPb areas)
+  &__districts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  &__district {
+    display: flex;
+    align-items: center;
+
+    color: #374151;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: $font-weight-medium;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #2563eb;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__district-icon {
+    color: #2563eb; // text-blue-600
+    margin-right: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  // Cities (LO areas)
+  &__cities {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem; // Уменьшили отступы
+    margin-bottom: 1rem;
+  }
+
+  &__city {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #374151;
+    text-decoration: none;
+    font-weight: $font-weight-medium; // Сделали жирнее
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #16a34a; // green-600
+    }
+  }
+
+  &__city-info {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: $font-weight-medium; // Сделали жирнее
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  &__city-icon {
+    color: #16a34a; // text-green-600
+    margin-right: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  &__city-distance {
+    font-size: 0.875rem; // text-sm
+    color: #6b7280; // text-gray-500
+
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+    }
+  }
+
+  // Info block
+  &__info {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: #eff6ff; // bg-blue-50
+    border-radius: 0.375rem;
+  }
+
+  &__info-text {
+    font-size: 0.875rem; // text-sm
+    color: #1d4ed8; // text-blue-700
+    margin: 0;
+    line-height: $line-height-normal;
+
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+/* ==========================================================================
+   CONTACTS SECTION
+   ========================================================================== */
+.contacts {
+  padding: 4rem 0;
+  background-color: #ffffff;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &__title {
+    font-size: 1.875rem; // text-3xl
+    font-weight: $font-weight-bold;
+    margin: 0 0 1rem;
+    color: #111827;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__subtitle {
+    color: #6b7280; // text-gray-600
+    font-size: 1.125rem;
+    margin: 0;
+    line-height: $line-height-normal;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  // Info section
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__info-title {
+    font-size: 1.25rem; // text-xl
+    font-weight: $font-weight-bold;
+    margin: 0 0 1.5rem;
+    color: #111827;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__info-icon {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    line-height: 1;
+  }
+
+  &__info-icon-img {
+    width: 2rem;
+    height: 2rem;
+    line-height: 1;
+  }
+
+  &__methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &__method {
+    display: flex;
+    align-items: center;
+  }
+
+  &__method-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    color: #ffffff;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+
+    &--phone {
+      background-color: #2563eb;
+    }
+
+    &--whatsapp {
+      background-color: #16a34a;
+    }
+
+    &--email {
+      background-color: #4b5563;
+    }
+
+    &--address {
+      background-color: #dc2626;
+    }
+
+    i {
+      font-style: normal;
+      font-weight: 400;
+    }
+  }
+
+  &__method-content {
+    flex: 1;
+  }
+
+  &__method-label {
+    font-weight: $font-weight-bold;
+    color: #111827;
+    margin-bottom: 0.25rem;
+  }
+
+  &__method-link {
+    display: block;
+    text-decoration: none;
+    transition: text-decoration 0.2s ease;
+    font-weight: 500;
+
+    &--phone {
+      color: #2563eb;
+    }
+
+    &--whatsapp {
+      color: #16a34a;
+    }
+
+    &--email {
+      color: #2563eb;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__method-address {
+    color: #374151;
+    font-weight: $font-weight-medium;
+  }
+
+  &__method-description {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+  }
+
+  // Form section
+  &__form-title {
+    font-weight: $font-weight-bold;
+    margin: 0 0 1rem;
+    color: #111827;
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__form-title-icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__form-input,
+  &__form-textarea {
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); // focus:ring
+    }
+
+    &::placeholder {
+      color: #9ca3af;
+    }
+  }
+
+  &__form-textarea {
+    resize: vertical;
+    min-height: 4rem;
+  }
+
+  &__form-checkbox {
+    display: flex;
+    align-items: flex-start;
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+
+  &__form-checkbox-input {
+    margin-right: 0.5rem;
+    margin-top: 0.125rem;
+  }
+
+  &__form-checkbox-text {
+    color: #374151;
+  }
+
+  &__form-link {
+    color: #2563eb;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #1d4ed8;
+    }
+  }
+
+  &__form-button {
+    background-color: #2563eb;
+    color: #ffffff;
+    font-weight: $font-weight-bold;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    &:hover {
+      background-color: #1d4ed8;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+    }
+  }
+
+  &__form-button-icon {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  // Map section
+  &__map {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__map-title {
+    font-size: 1.25rem;
+    font-weight: $font-weight-bold;
+    margin: 0 0 1.5rem;
+    color: #111827;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__map-icon {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    line-height: 1;
+  }
+
+  &__map-icon-img {
+    width: 2rem;
+    height: 2rem;
+
+    line-height: 1;
+  }
+
+  &__map-container {
+    background-color: #e5e7eb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    height: 400px;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+}
+
+/* ==========================================================================
+   COOKIE BANNER
+   ========================================================================== */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  padding: 1rem;
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+
+  &.show {
+    transform: translateY(0);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  &__text {
+    margin-bottom: 1rem;
+
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+    }
+
+    p {
+      font-size: 0.875rem; // text-sm
+      margin: 0;
+      line-height: $line-height-normal;
+    }
+  }
+
+  &__link {
+    color: #60a5fa; // text-blue-400
+    text-decoration: underline;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #93c5fd; // hover:text-blue-300
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem; // rounded
+    font-size: 0.875rem; // text-sm
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #ffffff;
+
+    &--accept {
+      background-color: #2563eb; // bg-blue-600
+      &:hover {
+        background-color: #1d4ed8; // hover:bg-blue-700
+      }
+    }
+
+    &--decline {
+      background-color: #4b5563; // bg-gray-600
+      &:hover {
+        background-color: #374151; // hover:bg-gray-700
+      }
+    }
+  }
+}

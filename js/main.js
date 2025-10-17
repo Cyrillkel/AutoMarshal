@@ -723,3 +723,26 @@ document.addEventListener("DOMContentLoaded", function() {
   updateCountdown();
   setInterval(updateCountdown, 1000);
 });
+
+// Cookie banner functions
+function acceptCookies() {
+  document.getElementById("cookieBanner").classList.remove("show");
+  localStorage.setItem("cookiesAccepted", "true");
+}
+
+function declineCookies() {
+  document.getElementById("cookieBanner").classList.remove("show");
+  localStorage.setItem("cookiesAccepted", "false");
+}
+
+// Check if cookies already accepted
+if (localStorage.getItem("cookiesAccepted")) {
+  document.getElementById("cookieBanner").classList.remove("show");
+} else {
+  // Show cookie banner after page load
+  document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+      document.getElementById("cookieBanner").classList.add("show");
+    }, 1000); // Show after 1 second
+  });
+}

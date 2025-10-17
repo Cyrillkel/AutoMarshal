@@ -84,3 +84,86 @@
     width: 100%;
   }
 }
+
+/* ==========================================================================
+   STICKY CONTACT BUTTONS
+   ========================================================================== */
+.sticky-buttons {
+  position: fixed;
+  right: 1.25rem; // 20px
+  bottom: 1.25rem; // 20px
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem; // 10px
+  z-index: 999;
+
+  @media (max-width: 768px) {
+    right: 0.625rem; // 10px
+    bottom: 0.625rem; // 10px
+  }
+}
+
+.sticky-btn {
+  width: 3.75rem; // 60px
+  height: 3.75rem; // 60px
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem; // 24px
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  line-height: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+
+  i {
+    font-style: normal;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  &:hover {
+    animation: pulse-size 1.5s infinite;
+  }
+
+  &--phone {
+    background-color: #10b981; // bg-green-500
+    &:hover {
+      background-color: #059669; // hover:bg-green-600
+    }
+  }
+
+  &--whatsapp {
+    background-color: #16a34a; // bg-green-600
+    &:hover {
+      background-color: #15803d; // hover:bg-green-700
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 3.125rem; // 50px
+    height: 3.125rem; // 50px
+    font-size: 1.25rem; // 20px
+  }
+}
+
+@keyframes pulse-size {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

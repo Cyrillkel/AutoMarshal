@@ -176,3 +176,20 @@
 .fa-star-o::before {
   content: "\f006";
 } /* star-o */
+
+.fa-whatsapp::before {
+  content: "\f232";
+} /* whatsapp */
+
+.fab {
+  font-family: "Font Awesome 6 Brands";
+  font-weight: 400;
+}
+
+.fab.fa-whatsapp::before {
+  content: "\f232";
+} /* whatsapp */
+
+.fa-comments::before {
+  content: "\f086";
+} /* comments */
